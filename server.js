@@ -7,7 +7,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackConfig from './webpack.config';
 import indexRouter from './routes/index';
-import usersRouter from './routes/api';
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -18,13 +18,12 @@ app.set('view engine', 'html');*/
 //Middleware
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api', usersRouter);
 
 // catch 404 and forward to error handler
 /*app.use(function(req, res, next) {

@@ -37,7 +37,7 @@ class Login extends Component {
                 <div className="login-box">
                     <img src={logo} className="avatar" alt="Logo" />
                     <h1>Login Here</h1>
-                    <form method='POST' action="">
+                    <form method='POST' action="/api/login">
                         <label>Username</label>
                         <input type="text" onChange={this.onChangeUsername} name="username" placeholder="Enter Username" />
                         <label>Password</label>
