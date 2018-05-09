@@ -1,20 +1,36 @@
 {
-  "name": "react-backend",
+  "name": "react-express",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "server": "nodemon ./bin/www",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "nodemon --exec babel-node server.js"
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "nodemon": "^1.17.3"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.1",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-livereload-plugin": "^2.1.1"
   }
 }
