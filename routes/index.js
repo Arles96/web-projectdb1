@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res, next)=> {
-  
+
 });
+
+router.get('*', (req, res, next)=>{
+  res.render('index.html');
+})
 
 module.exports = router;
