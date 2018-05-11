@@ -1,53 +1,92 @@
-import webpack from 'webpack';
-import htmlWebpackPlugin from 'html-webpack-plugin';
-import liveReloadPlugin from 'webpack-livereload-plugin';
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
-export default {
-    mode : 'none',
-    entry : './src/index.js',
-    output : {
-        path: __dirname,
-        filename : './public/javascripts/bundle.js'
-    },
-    module : {
-        rules : [
+process.env.NODE_ENV = "development";
+
+const browserConfig = {
+  entry: "./src/browser/index.js",
+  output: {
+    path: __dirname,
+    filename: "./public/bundle.js"
+  },
+  devtool: "cheap-module-source-map",
+  module: {
+    rules: [
+      {
+        test: [/\.svg$/, /\.gif$/, /\.jpg$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, "")
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [
             {
-                use : 'babel-loader',
-                test : /\.js$/,
-                exclude : /node_modules/
+              loader: "css-loader",
+              options: { importLoaders: 1 }
             },
             {
-                use : ['style-loader','css-loader'],
-                test : /\.css$/,
-            },
-            {
-                test: [/\.svg$/, /\.gif$/, /\.jpeg$/, /\.png$/],
-                loader: "file-loader",
-            },
-            {
-                test : /\.scss$/,
-                use : [
-                    {
-                        loader : 'style-loader'
-                    },
-                    {
-                        loader : 'css-loader', options: {
-                            sourceMap : true
-                        }
-                    },
-                    {
-                        loader : 'sass-loader', options: {
-                            sourceMap : true
-                        }
-                    }
-                ]
+              loader: "postcss-loader",
+              options: { plugins: [autoprefixer()] }
             }
-        ]
-    },
-    plugins : [
-        new htmlWebpackPlugin({
-            template: './public/index.html'
-        }),
-        new liveReloadPlugin()
+          ]
+        })
+      },
+      {
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
+      }
     ]
-}
+  },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "public/css/[name].css"
+    })
+  ]
+};
+
+const serverConfig = {
+  entry: "./src/server/index.js",
+  target: "node",
+  output: {
+    path: __dirname,
+    filename: "server.js",
+    libraryTarget: "commonjs2"
+  },
+  devtool: "cheap-module-source-map",
+  module: {
+    rules: [
+      {
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, ""),
+          emit: false
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader/locals"
+          }
+        ]
+      },
+      {
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
+      }
+    ]
+  }
+};
+
+module.exports = [browserConfig, serverConfig];
