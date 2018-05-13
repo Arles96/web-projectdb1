@@ -23845,8 +23845,14 @@ module.exports = ReactDOMInvalidARIAHook;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home_Home__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login_Login__ = __webpack_require__(234);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\App.js',
     _this = this;
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
 
 
 
@@ -23858,18 +23864,30 @@ var App = function App() {
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7
+        lineNumber: 9
       },
       __self: _this
     },
-    __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */].map(function (route, i) {
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], Object.assign({ key: i }, route, {
-        __source: {
+    __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */].map(function (_ref) {
+      var path = _ref.path,
+          exact = _ref.exact,
+          Component = _ref.component,
+          rest = _objectWithoutProperties(_ref, ['path', 'exact', 'component']);
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: path, path: path, exact: exact, render: function render(props) {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Component, Object.assign({}, props, rest, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 12
+            },
+            __self: _this
+          }));
+        }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 11
         },
         __self: _this
-      }));
+      });
     })
   );
 };
