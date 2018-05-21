@@ -3,7 +3,7 @@ import Login from './Login/Login';
 
 const routes = [
     {
-        path : '/Home',
+        path : '/Menu',
         component: Home,
         exact : true
     },

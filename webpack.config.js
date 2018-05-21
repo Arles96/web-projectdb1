@@ -1,6 +1,6 @@
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const autoprefixer = require("autoprefixer");
+const webpack = require("webpack")
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const autoprefixer = require("autoprefixer")
 
 process.env.NODE_ENV = "development";
 
@@ -49,7 +49,7 @@ const browserConfig = {
       filename: "public/css/[name].css"
     })
   ]
-};
+}
 
 const serverConfig = {
   entry: "./src/server/index.js",
@@ -87,6 +87,6 @@ const serverConfig = {
       }
     ]
   }
-};
+}
 
-module.exports = [browserConfig, serverConfig];
+module.exports = [browserConfig, serverConfig]

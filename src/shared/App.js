@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import {Switch, Route} from 'react-router-dom';
-import routes from './routes';
-import Home from './Home/Home';
-import Login from './Login/Login';
+import React, { Component } from "react"
+import {Switch, Route} from 'react-router-dom'
+import routes from './routes'
+import Home from './Home/Home'
+import Login from './Login/Login'
 
 const App = ()=> {
   return (
@@ -13,7 +13,7 @@ const App = ()=> {
         )} />
       ))}
     </Switch>
-  );
+  )
 }
 
-export default App;
+export default App
