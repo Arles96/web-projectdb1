@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
 import './FormAdd.css'
 
+/**
+ * Este componente es un formulario para agregar que recibe dos 
+ * atributos que son table y method
+ * @argument table es el nombre de la tabla seleccionada y la cual se va agregar los datos
+ * @argument method es la funcion que se ejecutara en el evento onSubmit
+ */
 class FormAdd extends Component {
 
     constructor(){
@@ -231,7 +237,7 @@ class FormAdd extends Component {
         return (
             <div className="card">
                 <div className="card-body">
-                    <h4 className="card-title text-center" >Agregar</h4>
+                    <h4 className="card-title text-center" >Actualizando</h4>
                     {this.renderForms()}
                 </div>
             </div>

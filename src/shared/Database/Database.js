@@ -10,6 +10,11 @@ import warehouse from '../img/warehouse.svg'
 import watertight from '../img/watertight.svg'
 import './Database.css'
 
+/**
+ * Este componente es un contenedor que muestra todos los registros 
+ * de la tabla seleccionada recibe dos argumentos
+ * @argument entity es la entidad seleccionada para mostrar y realizar operaciones 
+ */
 class Database extends Component {
 
     constructor(){
@@ -18,7 +23,7 @@ class Database extends Component {
             form : true,
             linkAdd : "nav-link active",
             linkUpdate : "nav-link",
-            data : null
+            data : 1
         }
         this.handleIcon = this.handleIcon.bind(this)
         this.handleForms = this.handleForms.bind(this)

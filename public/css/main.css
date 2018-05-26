@@ -168,6 +168,8 @@ body {
 
 .item-form {
     cursor: pointer;
+}.label-update {
+    width: 90px;
 }.label-add {
     width: 100px;
 }
