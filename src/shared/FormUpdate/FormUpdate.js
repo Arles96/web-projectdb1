@@ -13,6 +13,7 @@ class FormUpdate extends Component{
         this.handleFormWarehouse = this.handleFormWarehouse.bind(this)
         this.handleFormWatertight = this.handleFormWatertight.bind(this)
         this.handleFormOrders = this.handleFormOrders.bind(this)
+        this.renderForms = this.renderForms.bind(this)
     }
 
     //Formulario para Agregar Fabricante
@@ -240,7 +241,7 @@ class FormUpdate extends Component{
         )
     }
 
-    render(){
+    renderForms(){
        if(this.props.table==="maker"){
            return (<div>{this.handleFormMaker()}</div>)
        } 
@@ -263,6 +264,29 @@ class FormUpdate extends Component{
        }else {
            return (<div>{this.handleFormManufacture()}</div>)
        }
+    }
+
+    render(){
+        if (this.props.data){
+            return (
+                <div className="card" >
+                    <div className="card-body" >
+                    <h4 className="card-title text-center" >Agregar</h4>
+                        {this.renderForms()}
+                    </div>
+                </div>
+            )
+        }else {
+            return (
+                <div className="card">
+                    <div className="card-body" >
+                        <div className="mx-auto alert alert-info " >
+                            No se ha seleccionado el registro
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 
 }

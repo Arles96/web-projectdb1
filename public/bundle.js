@@ -1353,7 +1353,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 var bind = __webpack_require__(108);
-var isBuffer = __webpack_require__(252);
+var isBuffer = __webpack_require__(261);
 
 /*global toString:true*/
 
@@ -7748,7 +7748,7 @@ var createTransitionManager = function createTransitionManager() {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(13);
-var normalizeHeaderName = __webpack_require__(254);
+var normalizeHeaderName = __webpack_require__(263);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -12120,7 +12120,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_logo_svg__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_logo_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_logo_svg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Database_Database__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Container_Container__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Container_Container__ = __webpack_require__(256);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Home\\Home.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12151,9 +12151,10 @@ var Home = function (_Component) {
             purchases: false,
             sales: false,
             watertight: false,
-            orders: false,
+            Manufacture: false,
             home: true,
-            warehouse: false
+            warehouse: false,
+            queries: false
         };
         _this.handleComponent = _this.handleComponent.bind(_this);
         _this.handleCigarette = _this.handleCigarette.bind(_this);
@@ -12161,9 +12162,10 @@ var Home = function (_Component) {
         _this.handlePurchases = _this.handlePurchases.bind(_this);
         _this.handleSales = _this.handleSales.bind(_this);
         _this.handleWatertight = _this.handleWatertight.bind(_this);
-        _this.handleOrders = _this.handleOrders.bind(_this);
+        _this.handleManufacture = _this.handleManufacture.bind(_this);
         _this.handleHome = _this.handleHome.bind(_this);
         _this.handleWarehouse = _this.handleWarehouse.bind(_this);
+        _this.handleQueries = _this.handleQueries.bind(_this);
         return _this;
     }
 
@@ -12171,44 +12173,44 @@ var Home = function (_Component) {
         key: 'handleComponent',
         value: function handleComponent() {
             if (this.state.cigarette) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'cigarette', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'cigarette', title: 'Cigarrillo', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 34
+                        lineNumber: 36
                     },
                     __self: this
                 });
             } else if (this.state.maker) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'maker', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'maker', title: 'Fabricante', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 37
+                        lineNumber: 39
                     },
                     __self: this
                 });
             } else if (this.state.purchases) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'purchases', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'purchases', title: 'Compras', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 40
+                        lineNumber: 42
                     },
                     __self: this
                 });
             } else if (this.state.sales) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'sales', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'sales', title: 'Ventas', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 43
+                        lineNumber: 45
                     },
                     __self: this
                 });
             } else if (this.state.watertight) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'watertight', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'watertight', title: 'Estanco', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 48
                     },
                     __self: this
                 });
-            } else if (this.state.orders) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'orders', __source: {
+            } else if (this.state.Manufacture) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'Manufacture', title: 'Manufactura', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 49
+                        lineNumber: 51
                     },
                     __self: this
                 });
@@ -12216,14 +12218,14 @@ var Home = function (_Component) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Container_Container__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 52
+                        lineNumber: 54
                     },
                     __self: this
                 });
             } else {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'warehouse', __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'warehouse', title: 'Almacen', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 55
+                        lineNumber: 57
                     },
                     __self: this
                 });
@@ -12238,9 +12240,10 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: false,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12252,9 +12255,10 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: false,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12266,9 +12270,10 @@ var Home = function (_Component) {
                 purchases: true,
                 sales: false,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12280,9 +12285,10 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: true,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12294,23 +12300,25 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: false,
                 watertight: true,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
-        key: 'handleOrders',
-        value: function handleOrders() {
+        key: 'handleManufacture',
+        value: function handleManufacture() {
             this.setState({
                 cigarette: false,
                 maker: false,
                 purchases: false,
                 sales: false,
                 watertight: false,
-                orders: true,
+                Manufacture: true,
                 home: false,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12322,9 +12330,10 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: false,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: true,
-                warehouse: false
+                warehouse: false,
+                queries: false
             });
         }
     }, {
@@ -12336,9 +12345,25 @@ var Home = function (_Component) {
                 purchases: false,
                 sales: false,
                 watertight: false,
-                orders: false,
+                Manufacture: false,
                 home: false,
-                warehouse: true
+                warehouse: true,
+                queries: false
+            });
+        }
+    }, {
+        key: 'handleQueries',
+        value: function handleQueries() {
+            this.setState({
+                cigarette: false,
+                maker: false,
+                purchases: false,
+                sales: false,
+                watertight: false,
+                Manufacture: false,
+                home: false,
+                warehouse: false,
+                queries: true
             });
         }
     }, {
@@ -12348,7 +12373,7 @@ var Home = function (_Component) {
                 'div',
                 { className: 'row m-0', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 165
+                        lineNumber: 189
                     },
                     __self: this
                 },
@@ -12356,7 +12381,7 @@ var Home = function (_Component) {
                     'div',
                     { id: 'style-2', className: 'col-md-2 menu p-0', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 166
+                            lineNumber: 190
                         },
                         __self: this
                     },
@@ -12364,13 +12389,13 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-home', onClick: this.handleHome, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 167
+                                lineNumber: 191
                             },
                             __self: this
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__img_logo_svg___default.a, className: 'App-logo', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 168
+                                lineNumber: 192
                             },
                             __self: this
                         }),
@@ -12378,7 +12403,7 @@ var Home = function (_Component) {
                             'h5',
                             { className: 'm-3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 169
+                                    lineNumber: 193
                                 },
                                 __self: this
                             },
@@ -12389,7 +12414,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleMaker, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 171
+                                lineNumber: 195
                             },
                             __self: this
                         },
@@ -12399,7 +12424,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleCigarette, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 172
+                                lineNumber: 196
                             },
                             __self: this
                         },
@@ -12409,7 +12434,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleWarehouse, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 173
+                                lineNumber: 197
                             },
                             __self: this
                         },
@@ -12419,7 +12444,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handlePurchases, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 174
+                                lineNumber: 198
                             },
                             __self: this
                         },
@@ -12429,7 +12454,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleSales, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 175
+                                lineNumber: 199
                             },
                             __self: this
                         },
@@ -12439,7 +12464,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleWatertight, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 176
+                                lineNumber: 200
                             },
                             __self: this
                         },
@@ -12447,19 +12472,19 @@ var Home = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'menu-nav pt-4', onClick: this.handleOrders, __source: {
+                        { className: 'menu-nav pt-4', onClick: this.handleManufacture, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 177
+                                lineNumber: 201
                             },
                             __self: this
                         },
-                        'Pedidos'
+                        'Manufactura'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'menu-nav pt-4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 178
+                                lineNumber: 202
                             },
                             __self: this
                         },
@@ -12469,7 +12494,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 179
+                                lineNumber: 203
                             },
                             __self: this
                         },
@@ -12480,7 +12505,7 @@ var Home = function (_Component) {
                     'div',
                     { className: 'col-md-10', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 181
+                            lineNumber: 205
                         },
                         __self: this
                     },
@@ -12502,7 +12527,9 @@ var Home = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\FormAdd\\FormAdd.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormAdd_css__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormAdd_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FormAdd_css__);
+var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\FormAdd\\FormAdd.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -12511,6 +12538,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -12529,7 +12557,7 @@ var FormAdd = function (_Component) {
         _this.handleFormSales = _this.handleFormSales.bind(_this);
         _this.handleFormWarehouse = _this.handleFormWarehouse.bind(_this);
         _this.handleFormWatertight = _this.handleFormWatertight.bind(_this);
-        _this.handleFormOrders = _this.handleFormOrders.bind(_this);
+        _this.renderForms = _this.renderForms.bind(_this);
         return _this;
     }
 
@@ -12537,37 +12565,26 @@ var FormAdd = function (_Component) {
 
 
     _createClass(FormAdd, [{
-        key: "handleFormMaker",
+        key: 'handleFormMaker',
         value: function handleFormMaker() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
+                        lineNumber: 21
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 22
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 22
-                            },
-                            __self: this
-                        },
-                        "Nombre"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "nombreF", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el nombre", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el nombre', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 23
                         },
@@ -12575,41 +12592,30 @@ var FormAdd = function (_Component) {
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 26
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 27
-                            },
-                            __self: this
-                        },
-                        "Pais"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "paisF", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el pais", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'paisF', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el pais', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 28
+                            lineNumber: 27
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 31
+                            lineNumber: 30
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -12617,79 +12623,73 @@ var FormAdd = function (_Component) {
         //Formmulario para agregar Almacen
 
     }, {
-        key: "handleFormWarehouse",
+        key: 'handleFormWarehouse',
         value: function handleFormWarehouse() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 39
+                        lineNumber: 38
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 39
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloA', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el id cigarrillo', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 40
                         },
                         __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 41
-                            },
-                            __self: this
-                        },
-                        "Id Cigarrillo"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idCigarrilloA", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id cigarrillo", __source: {
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 43
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'existencia', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese cantidad en existencia', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 44
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 45
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 46
-                            },
-                            __self: this
-                        },
-                        "Existencia"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "existencia", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese cantidad en existencia", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 47
                         },
                         __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoA', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese n\xFAmero fiscal del estanco', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 48
+                        },
+                        __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 51
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -12697,402 +12697,299 @@ var FormAdd = function (_Component) {
         //Formluario para agregar Cigarrillos
 
     }, {
-        key: "handleFormCigarette",
+        key: 'handleFormCigarette',
         value: function handleFormCigarette() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 59
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 60
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
+                        'div',
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
+                                lineNumber: 61
                             },
                             __self: this
                         },
-                        "Id Fabricante"
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'label',
+                            { className: 'mr-3 label-add', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 62
+                                },
+                                __self: this
+                            },
+                            'Id Fabricante:'
+                        )
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idFabricanteC", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id Fabricante", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 61
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteC', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese id Fabricante', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 64
                         },
                         __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 67
+                        },
+                        __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
+                        'label',
+                        { className: 'mr-3 label-add', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 65
+                                lineNumber: 68
                             },
                             __self: this
                         },
-                        "Marca"
+                        'Marca'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "marca", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese marca", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marca', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese marca', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 66
+                            lineNumber: 69
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 72
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
+                        'label',
+                        { className: 'mr-3 label-add', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 70
+                                lineNumber: 73
                             },
                             __self: this
                         },
-                        "Contaminante"
+                        'Contaminante'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "select",
-                        { name: "contaminante", className: "form-control form-control-sm", __source: {
+                        'select',
+                        { name: 'contaminante', className: 'form-control form-control-sm', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 71
+                                lineNumber: 74
                             },
                             __self: this
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "0", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 72
-                                },
-                                __self: this
-                            },
-                            "Normal"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "1", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 73
-                                },
-                                __self: this
-                            },
-                            "light"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "2", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 74
-                                },
-                                __self: this
-                            },
-                            "superlight"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "3", __source: {
+                            'option',
+                            { value: '0', __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 75
                                 },
                                 __self: this
                             },
-                            "ultralight"
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 78
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 79
-                            },
-                            __self: this
-                        },
-                        "Filtro"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "select",
-                        { name: "filtro", className: "form-control form-control-sm", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 80
-                            },
-                            __self: this
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "0", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 81
-                                },
-                                __self: this
-                            },
-                            "Si"
+                            'Normal'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "1", __source: {
+                            'option',
+                            { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 82
+                                    lineNumber: 76
                                 },
                                 __self: this
                             },
-                            "No"
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 85
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 86
-                            },
-                            __self: this
-                        },
-                        "Mentolado"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "select",
-                        { name: "mentolado", className: "form-control form-control-sm", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 87
-                            },
-                            __self: this
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "0", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 88
-                                },
-                                __self: this
-                            },
-                            "Si"
+                            'light'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "1", __source: {
+                            'option',
+                            { value: '2', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 89
+                                    lineNumber: 77
                                 },
                                 __self: this
                             },
-                            "No"
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 92
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 93
-                            },
-                            __self: this
-                        },
-                        "Hoja"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "select",
-                        { name: "hoja", className: "form-control form-control-sm", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 94
-                            },
-                            __self: this
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "0", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 95
-                                },
-                                __self: this
-                            },
-                            "Negra"
+                            'superlight'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "option",
-                            { value: "1", __source: {
+                            'option',
+                            { value: '3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 96
+                                    lineNumber: 78
                                 },
                                 __self: this
                             },
-                            "Rubia"
+                            'ultralight'
                         )
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 99
-                        },
-                        __self: this
-                    },
-                    "Agregar"
-                )
-            );
-        }
-
-        //Formulario para agregar Pedidos
-
-    }, {
-        key: "handleFormOrders",
-        value: function handleFormOrders() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
-                { onSubmit: this.props.method, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 107
-                    },
-                    __self: this
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 108
+                            lineNumber: 81
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
+                        'label',
+                        { className: 'mr-3 label-add', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 109
+                                lineNumber: 82
                             },
                             __self: this
                         },
-                        "id Almacen"
+                        'Filtro'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idAlmacenP", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id del Almacen", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 110
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'select',
+                        { name: 'filtro', className: 'form-control form-control-sm', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 83
+                            },
+                            __self: this
                         },
-                        __self: this
-                    })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '0', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 84
+                                },
+                                __self: this
+                            },
+                            'Si'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '1', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 85
+                                },
+                                __self: this
+                            },
+                            'No'
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 113
+                            lineNumber: 88
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
+                        'label',
+                        { className: 'mr-3 label-add', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 114
+                                lineNumber: 89
                             },
                             __self: this
                         },
-                        "NIF Estanco"
+                        'Mentolado'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "nifEstancoP", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el nif de estanco", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 115
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'select',
+                        { name: 'mentolado', className: 'form-control form-control-sm', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 90
+                            },
+                            __self: this
                         },
-                        __self: this
-                    })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '0', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 91
+                                },
+                                __self: this
+                            },
+                            'Si'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '1', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 92
+                                },
+                                __self: this
+                            },
+                            'No'
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 118
+                            lineNumber: 95
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
+                        'label',
+                        { className: 'mr-3 label-add', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 119
+                                lineNumber: 96
                             },
                             __self: this
                         },
-                        "Cantidad"
+                        'Hoja'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "cantidad", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese cantidad", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 120
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'select',
+                        { name: 'hoja', className: 'form-control form-control-sm', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 97
+                            },
+                            __self: this
                         },
-                        __self: this
-                    })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '0', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 98
+                                },
+                                __self: this
+                            },
+                            'Negra'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '1', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 99
+                                },
+                                __self: this
+                            },
+                            'Rubia'
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 123
+                            lineNumber: 102
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -13100,132 +12997,88 @@ var FormAdd = function (_Component) {
         //Formulario para agregar Compras
 
     }, {
-        key: "handleFormPurchases",
+        key: 'handleFormPurchases',
         value: function handleFormPurchases() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 131
+                        lineNumber: 110
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 132
+                            lineNumber: 111
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 133
-                            },
-                            __self: this
-                        },
-                        "id Almacen"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idAlmacenC", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id del Almacen", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloC', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese id Cigarrillo', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 134
+                            lineNumber: 112
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 137
+                            lineNumber: 115
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 138
-                            },
-                            __self: this
-                        },
-                        "Precio"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "precioC", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el precio de compra", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioC', type: 'number', step: 'any', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese precio de compra', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 139
+                            lineNumber: 116
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 142
+                            lineNumber: 119
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 143
-                            },
-                            __self: this
-                        },
-                        "Cantidad"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "cantidadC", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese cantidad", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidadC', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese cantidad', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 144
+                            lineNumber: 120
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 147
+                            lineNumber: 123
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 148
-                            },
-                            __self: this
-                        },
-                        "Fecha"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "fechaC", type: "date", className: "form-control form-control-sm", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaC', type: 'date', className: 'form-control form-control-sm', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 149
+                            lineNumber: 124
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 151
+                            lineNumber: 126
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -13233,133 +13086,89 @@ var FormAdd = function (_Component) {
         //Formulario para agregar Estanco
 
     }, {
-        key: "handleFormWatertight",
+        key: 'handleFormWatertight',
         value: function handleFormWatertight() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 159
+                        lineNumber: 134
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 160
+                            lineNumber: 135
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 161
-                            },
-                            __self: this
-                        },
-                        "NIF"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "nifEstanco", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el nif de Estanco", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstanco', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el nif de Estanco', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 162
+                            lineNumber: 136
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 165
+                            lineNumber: 139
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 166
-                            },
-                            __self: this
-                        },
-                        "Numero de Expendio"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "numExp", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el numero Expendio", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'numExp', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el numero Expendio', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 167
+                            lineNumber: 140
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 170
+                            lineNumber: 143
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 171
-                            },
-                            __self: this
-                        },
-                        "Nombre"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "nombreExp", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese nombre", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreExp', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese nombre', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 172
+                            lineNumber: 144
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 175
+                            lineNumber: 147
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 176
-                            },
-                            __self: this
-                        },
-                        "Local"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "localExp", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese local", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'localExp', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese local', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 177
+                            lineNumber: 148
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 180
+                            lineNumber: 151
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -13367,132 +13176,88 @@ var FormAdd = function (_Component) {
         //Formulario para agregar Ventas
 
     }, {
-        key: "handleFormSales",
+        key: 'handleFormSales',
         value: function handleFormSales() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 188
+                        lineNumber: 159
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 189
+                            lineNumber: 160
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 190
-                            },
-                            __self: this
-                        },
-                        "NIF Estanco"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "nifEstancoV", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el nif Extanco", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoV', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el nif Extanco', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 191
+                            lineNumber: 161
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 194
+                            lineNumber: 164
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 195
-                            },
-                            __self: this
-                        },
-                        "id Almacen"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idAlmacenV", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id del Almacen", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloV', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese id Cigarrillo', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 196
+                            lineNumber: 165
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 199
+                            lineNumber: 168
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 200
-                            },
-                            __self: this
-                        },
-                        "Precio"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "precioVenta", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese precio", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioVenta', type: 'number', step: 'any', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese precio', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 201
+                            lineNumber: 169
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 204
+                            lineNumber: 172
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 205
-                            },
-                            __self: this
-                        },
-                        "Fecha"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "fechaV", type: "date", className: "form-control form-control-sm", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaV', type: 'date', className: 'form-control form-control-sm', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 206
+                            lineNumber: 173
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 208
+                            lineNumber: 175
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
@@ -13500,146 +13265,102 @@ var FormAdd = function (_Component) {
         //Formulario para agregar Manufactura
 
     }, {
-        key: "handleFormManufacture",
+        key: 'handleFormManufacture',
         value: function handleFormManufacture() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "form",
+                'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 216
+                        lineNumber: 183
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 217
+                            lineNumber: 184
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 218
-                            },
-                            __self: this
-                        },
-                        "id Fabricante"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "idFabricanteM", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese el id del Fabricante", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteM', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese el id del Fabricante', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 219
+                            lineNumber: 185
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 222
+                            lineNumber: 188
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 223
-                            },
-                            __self: this
-                        },
-                        "Marca"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "marcaM", type: "text", className: "form-control form-control-sm",
-                        placeholder: "Ingrese marca", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marcaM', type: 'text', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese marca', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 224
+                            lineNumber: 189
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 227
+                            lineNumber: 192
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 228
-                            },
-                            __self: this
-                        },
-                        "Carton"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "carton", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese numero de carton", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'carton', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese numero de carton', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 229
+                            lineNumber: 193
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-group", __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 232
+                            lineNumber: 196
                         },
                         __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "label",
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 233
-                            },
-                            __self: this
-                        },
-                        "Embalaje"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { name: "embalaje", type: "number", className: "form-control form-control-sm",
-                        placeholder: "Ingrese numero de embalaje", __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'embalaje', type: 'number', className: 'form-control form-control-sm',
+                        placeholder: 'Ingrese numero de embalaje', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 234
+                            lineNumber: 197
                         },
                         __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "button",
-                    { type: "submit", className: "btn btn-primary", __source: {
+                    'button',
+                    { type: 'submit', className: 'btn btn-primary btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 237
+                            lineNumber: 200
                         },
                         __self: this
                     },
-                    "Agregar"
+                    'Agregar'
                 )
             );
         }
     }, {
-        key: "render",
-        value: function render() {
+        key: 'renderForms',
+        value: function renderForms() {
             if (this.props.table === "maker") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 244
+                            lineNumber: 207
                         },
                         __self: this
                     },
@@ -13647,11 +13368,11 @@ var FormAdd = function (_Component) {
                 );
             } else if (this.props.table === "warehouse") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 247
+                            lineNumber: 210
                         },
                         __self: this
                     },
@@ -13659,35 +13380,35 @@ var FormAdd = function (_Component) {
                 );
             } else if (this.props.table === "cigarette") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 250
+                            lineNumber: 213
                         },
                         __self: this
                     },
                     this.handleFormCigarette()
                 );
-            } else if (this.props.table == "orders") {
+            } else if (this.props.table == "Manufacture") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 253
+                            lineNumber: 216
                         },
                         __self: this
                     },
-                    this.handleFormOrders()
+                    this.handleFormManufacture()
                 );
             } else if (this.props.table === "purchases") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 256
+                            lineNumber: 219
                         },
                         __self: this
                     },
@@ -13695,11 +13416,11 @@ var FormAdd = function (_Component) {
                 );
             } else if (this.props.table === "watertight") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 259
+                            lineNumber: 222
                         },
                         __self: this
                     },
@@ -13707,11 +13428,11 @@ var FormAdd = function (_Component) {
                 );
             } else if (this.props.table === "sales") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 261
+                            lineNumber: 224
                         },
                         __self: this
                     },
@@ -13719,17 +13440,50 @@ var FormAdd = function (_Component) {
                 );
             } else {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
+                    'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 263
+                            lineNumber: 226
                         },
                         __self: this
                     },
                     this.handleFormManufacture()
                 );
             }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 232
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'card-body', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 233
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h4',
+                        { className: 'card-title text-center', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 234
+                            },
+                            __self: this
+                        },
+                        'Agregar'
+                    ),
+                    this.renderForms()
+                )
+            );
         }
     }]);
 
@@ -13745,11 +13499,11 @@ var FormAdd = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Login_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_database_svg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Login\\Login.js';
 
@@ -13941,12 +13695,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(13);
-var settle = __webpack_require__(255);
-var buildURL = __webpack_require__(257);
-var parseHeaders = __webpack_require__(258);
-var isURLSameOrigin = __webpack_require__(259);
+var settle = __webpack_require__(264);
+var buildURL = __webpack_require__(266);
+var parseHeaders = __webpack_require__(267);
+var isURLSameOrigin = __webpack_require__(268);
 var createError = __webpack_require__(110);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(260);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(269);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -14043,7 +13797,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(261);
+      var cookies = __webpack_require__(270);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -14128,7 +13882,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(256);
+var enhanceError = __webpack_require__(265);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -29529,7 +29283,23 @@ module.exports = "/media/logo.svg";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormAdd_FormAdd__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FormUpdate_FormUpdate__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FormUpdate_FormUpdate__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_cigarette_svg__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_cigarette_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__img_cigarette_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__img_maker_svg__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__img_maker_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__img_maker_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__img_purchases_svg__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__img_purchases_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__img_purchases_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__img_Manufacture_svg__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__img_Manufacture_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__img_Manufacture_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__img_sales_svg__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__img_sales_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__img_sales_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__img_warehouse_svg__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__img_warehouse_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__img_warehouse_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__img_watertight_svg__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__img_watertight_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__img_watertight_svg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Database_css__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Database_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__Database_css__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Database\\Database.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29544,101 +29314,233 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
+
+
+
+
+
+
 var Database = function (_Component) {
     _inherits(Database, _Component);
 
     function Database() {
         _classCallCheck(this, Database);
 
-        return _possibleConstructorReturn(this, (Database.__proto__ || Object.getPrototypeOf(Database)).call(this));
+        var _this = _possibleConstructorReturn(this, (Database.__proto__ || Object.getPrototypeOf(Database)).call(this));
+
+        _this.state = {
+            form: true,
+            linkAdd: "nav-link active",
+            linkUpdate: "nav-link",
+            data: null
+        };
+        _this.handleIcon = _this.handleIcon.bind(_this);
+        _this.handleForms = _this.handleForms.bind(_this);
+        _this.eventItemAdd = _this.eventItemAdd.bind(_this);
+        _this.eventItemUpdate = _this.eventItemUpdate.bind(_this);
+        return _this;
     }
 
+    //Función de mostrar el icono corresponiente para cada tabla
+
+
     _createClass(Database, [{
+        key: 'handleIcon',
+        value: function handleIcon() {
+            if (this.props.entity === "cigarette") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__img_cigarette_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 32
+                    },
+                    __self: this
+                });
+            } else if (this.props.entity === "maker") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__img_maker_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 35
+                    },
+                    __self: this
+                });
+            } else if (this.props.entity === "purchases") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_5__img_purchases_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 38
+                    },
+                    __self: this
+                });
+            } else if (this.props.entity === "sales") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_7__img_sales_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 41
+                    },
+                    __self: this
+                });
+            } else if (this.props.entity === "watertight") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_9__img_watertight_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 44
+                    },
+                    __self: this
+                });
+            } else if (this.props.entity === "Manufacture") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_6__img_Manufacture_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 47
+                    },
+                    __self: this
+                });
+            } else {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_8__img_warehouse_svg___default.a, className: 'icon-title mr-3', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 50
+                    },
+                    __self: this
+                });
+            }
+        }
+    }, {
+        key: 'eventItemAdd',
+        value: function eventItemAdd() {
+            this.setState({
+                form: true,
+                linkAdd: "nav-link active",
+                linkUpdate: "nav-link"
+            });
+        }
+    }, {
+        key: 'eventItemUpdate',
+        value: function eventItemUpdate() {
+            this.setState({
+                form: false,
+                linkAdd: "nav-link",
+                linkUpdate: "nav-link active"
+            });
+        }
+
+        //Funcion que se encarga de mostrar el formulario y activar el nav-item correspondiente 
+
+    }, {
+        key: 'handleForms',
+        value: function handleForms() {
+            if (this.state.form) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__FormAdd_FormAdd__["a" /* default */], { table: this.props.entity, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 73
+                    },
+                    __self: this
+                });
+            } else {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__FormUpdate_FormUpdate__["a" /* default */], { table: this.props.entity, data: this.state.data, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 75
+                    },
+                    __self: this
+                });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'row', __source: {
+                { className: 'container', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 13
+                        lineNumber: 81
                     },
                     __self: this
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-8', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 14
-                    },
-                    __self: this
-                }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'col-md-4', __source: {
+                    { className: 'mb-4', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 16
+                            lineNumber: 82
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'card', __source: {
+                        'h1',
+                        { className: 'text-center', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 17
+                                lineNumber: 83
                             },
                             __self: this
                         },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'card-body', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 18
-                                },
-                                __self: this
-                            },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'h4',
-                                { className: 'card-title text-center', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 19
-                                    },
-                                    __self: this
-                                },
-                                'Agregar'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__FormAdd_FormAdd__["a" /* default */], { table: this.props.entity, __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 20
-                                },
-                                __self: this
-                            })
-                        )
-                    ),
+                        this.handleIcon(),
+                        this.props.title
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'row', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 88
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-8', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 89
+                        },
+                        __self: this
+                    }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'card', __source: {
+                        { className: 'col-md-4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 23
+                                lineNumber: 91
                             },
                             __self: this
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'card-body', __source: {
+                            'ul',
+                            { className: 'nav nav-tabs', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 24
+                                    lineNumber: 92
                                 },
                                 __self: this
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'h4',
-                                { className: 'card-title text-center', __source: {
+                                'li',
+                                { className: 'nav-item item-form', onClick: this.eventItemAdd, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 25
+                                        lineNumber: 93
                                     },
                                     __self: this
                                 },
-                                'Actualizar'
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { className: this.state.linkAdd, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 94
+                                        },
+                                        __self: this
+                                    },
+                                    'Agregar'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { className: 'nav nav-item item-form', onClick: this.eventItemUpdate, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 96
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { className: this.state.linkUpdate, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 97
+                                        },
+                                        __self: this
+                                    },
+                                    'Actualizar'
+                                )
                             )
-                        )
+                        ),
+                        this.handleForms()
                     )
                 )
             );
@@ -29652,6 +29554,12 @@ var Database = function (_Component) {
 
 /***/ }),
 /* 246 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 247 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29687,6 +29595,7 @@ var FormUpdate = function (_Component) {
         _this.handleFormWarehouse = _this.handleFormWarehouse.bind(_this);
         _this.handleFormWatertight = _this.handleFormWatertight.bind(_this);
         _this.handleFormOrders = _this.handleFormOrders.bind(_this);
+        _this.renderForms = _this.renderForms.bind(_this);
         return _this;
     }
 
@@ -29700,7 +29609,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 21
+                        lineNumber: 22
                     },
                     __self: this
                 },
@@ -29708,7 +29617,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: this
                     },
@@ -29717,7 +29626,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 23
+                                lineNumber: 24
                             },
                             __self: this
                         },
@@ -29726,7 +29635,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control',
                         value: this.props.data.nombreF, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 24
+                            lineNumber: 25
                         },
                         __self: this
                     })
@@ -29735,7 +29644,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 28
                         },
                         __self: this
                     },
@@ -29744,7 +29653,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 29
                             },
                             __self: this
                         },
@@ -29753,7 +29662,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'paisF', type: 'text', className: 'form-control',
                         value: this.props.data.paisF, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 30
                         },
                         __self: this
                     })
@@ -29762,7 +29671,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-success', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 32
+                            lineNumber: 33
                         },
                         __self: this
                     },
@@ -29780,7 +29689,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 40
+                        lineNumber: 41
                     },
                     __self: this
                 },
@@ -29788,7 +29697,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 41
+                            lineNumber: 42
                         },
                         __self: this
                     },
@@ -29797,7 +29706,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 42
+                                lineNumber: 43
                             },
                             __self: this
                         },
@@ -29806,7 +29715,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloA', type: 'number', className: 'form-control',
                         value: this.props.data.idCigarrilloA, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 43
+                            lineNumber: 44
                         },
                         __self: this
                     })
@@ -29815,7 +29724,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 46
+                            lineNumber: 47
                         },
                         __self: this
                     },
@@ -29824,7 +29733,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 47
+                                lineNumber: 48
                             },
                             __self: this
                         },
@@ -29833,7 +29742,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'existencia', type: 'number', className: 'form-control',
                         value: this.props.data.existencia, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 49
                         },
                         __self: this
                     })
@@ -29842,7 +29751,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 52
                         },
                         __self: this
                     },
@@ -29860,7 +29769,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 59
+                        lineNumber: 60
                     },
                     __self: this
                 },
@@ -29868,7 +29777,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 60
+                            lineNumber: 61
                         },
                         __self: this
                     },
@@ -29877,7 +29786,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 62
                             },
                             __self: this
                         },
@@ -29886,7 +29795,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteC', type: 'number', className: 'form-control',
                         value: this.props.data.idFabricanteC, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 62
+                            lineNumber: 63
                         },
                         __self: this
                     })
@@ -29895,7 +29804,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 66
                         },
                         __self: this
                     },
@@ -29904,7 +29813,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 66
+                                lineNumber: 67
                             },
                             __self: this
                         },
@@ -29913,7 +29822,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marca', type: 'text', className: 'form-control',
                         value: this.props.data.marca, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 68
                         },
                         __self: this
                     })
@@ -29922,7 +29831,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 70
+                            lineNumber: 71
                         },
                         __self: this
                     },
@@ -29931,7 +29840,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 71
+                                lineNumber: 72
                             },
                             __self: this
                         },
@@ -29941,7 +29850,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'contaminante', className: 'form-control', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 72
+                                lineNumber: 73
                             },
                             __self: this
                         },
@@ -29949,7 +29858,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 73
+                                    lineNumber: 74
                                 },
                                 __self: this
                             },
@@ -29959,7 +29868,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 74
+                                    lineNumber: 75
                                 },
                                 __self: this
                             },
@@ -29969,7 +29878,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '2', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 75
+                                    lineNumber: 76
                                 },
                                 __self: this
                             },
@@ -29979,7 +29888,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 76
+                                    lineNumber: 77
                                 },
                                 __self: this
                             },
@@ -29991,7 +29900,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 79
+                            lineNumber: 80
                         },
                         __self: this
                     },
@@ -30000,7 +29909,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 80
+                                lineNumber: 81
                             },
                             __self: this
                         },
@@ -30010,7 +29919,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'filtro', className: 'form-control', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 81
+                                lineNumber: 82
                             },
                             __self: this
                         },
@@ -30018,7 +29927,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 82
+                                    lineNumber: 83
                                 },
                                 __self: this
                             },
@@ -30028,7 +29937,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 83
+                                    lineNumber: 84
                                 },
                                 __self: this
                             },
@@ -30040,7 +29949,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 86
+                            lineNumber: 87
                         },
                         __self: this
                     },
@@ -30049,7 +29958,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 88
                             },
                             __self: this
                         },
@@ -30059,7 +29968,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'mentolado', className: 'form-control', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 88
+                                lineNumber: 89
                             },
                             __self: this
                         },
@@ -30067,7 +29976,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 89
+                                    lineNumber: 90
                                 },
                                 __self: this
                             },
@@ -30077,7 +29986,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 90
+                                    lineNumber: 91
                                 },
                                 __self: this
                             },
@@ -30089,7 +29998,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 93
+                            lineNumber: 94
                         },
                         __self: this
                     },
@@ -30098,7 +30007,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 94
+                                lineNumber: 95
                             },
                             __self: this
                         },
@@ -30108,7 +30017,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'hoja', className: 'form-control', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 95
+                                lineNumber: 96
                             },
                             __self: this
                         },
@@ -30116,7 +30025,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 96
+                                    lineNumber: 97
                                 },
                                 __self: this
                             },
@@ -30126,7 +30035,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 97
+                                    lineNumber: 98
                                 },
                                 __self: this
                             },
@@ -30138,7 +30047,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 100
+                            lineNumber: 101
                         },
                         __self: this
                     },
@@ -30156,7 +30065,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 108
+                        lineNumber: 109
                     },
                     __self: this
                 },
@@ -30164,7 +30073,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 109
+                            lineNumber: 110
                         },
                         __self: this
                     },
@@ -30173,7 +30082,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 110
+                                lineNumber: 111
                             },
                             __self: this
                         },
@@ -30182,7 +30091,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idAlmacenP', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el id del Almacen', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 111
+                            lineNumber: 112
                         },
                         __self: this
                     })
@@ -30191,7 +30100,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 114
+                            lineNumber: 115
                         },
                         __self: this
                     },
@@ -30200,7 +30109,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 115
+                                lineNumber: 116
                             },
                             __self: this
                         },
@@ -30209,7 +30118,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoP', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el nif de estanco', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 116
+                            lineNumber: 117
                         },
                         __self: this
                     })
@@ -30218,7 +30127,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 119
+                            lineNumber: 120
                         },
                         __self: this
                     },
@@ -30227,7 +30136,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 120
+                                lineNumber: 121
                             },
                             __self: this
                         },
@@ -30236,7 +30145,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidad', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese cantidad', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 121
+                            lineNumber: 122
                         },
                         __self: this
                     })
@@ -30245,7 +30154,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 124
+                            lineNumber: 125
                         },
                         __self: this
                     },
@@ -30263,7 +30172,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 132
+                        lineNumber: 133
                     },
                     __self: this
                 },
@@ -30271,7 +30180,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 133
+                            lineNumber: 134
                         },
                         __self: this
                     },
@@ -30280,7 +30189,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 134
+                                lineNumber: 135
                             },
                             __self: this
                         },
@@ -30289,7 +30198,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idAlmacenC', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el id del Almacen', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 135
+                            lineNumber: 136
                         },
                         __self: this
                     })
@@ -30298,7 +30207,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 138
+                            lineNumber: 139
                         },
                         __self: this
                     },
@@ -30307,7 +30216,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 139
+                                lineNumber: 140
                             },
                             __self: this
                         },
@@ -30316,7 +30225,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioC', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el precio de compra', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 140
+                            lineNumber: 141
                         },
                         __self: this
                     })
@@ -30325,7 +30234,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 143
+                            lineNumber: 144
                         },
                         __self: this
                     },
@@ -30334,7 +30243,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 144
+                                lineNumber: 145
                             },
                             __self: this
                         },
@@ -30343,7 +30252,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidadC', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese cantidad', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 145
+                            lineNumber: 146
                         },
                         __self: this
                     })
@@ -30352,7 +30261,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 148
+                            lineNumber: 149
                         },
                         __self: this
                     },
@@ -30361,7 +30270,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 149
+                                lineNumber: 150
                             },
                             __self: this
                         },
@@ -30369,7 +30278,7 @@ var FormUpdate = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaC', type: 'date', className: 'form-control', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 150
+                            lineNumber: 151
                         },
                         __self: this
                     })
@@ -30378,7 +30287,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 152
+                            lineNumber: 153
                         },
                         __self: this
                     },
@@ -30396,7 +30305,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 160
+                        lineNumber: 161
                     },
                     __self: this
                 },
@@ -30404,7 +30313,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 161
+                            lineNumber: 162
                         },
                         __self: this
                     },
@@ -30413,7 +30322,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 162
+                                lineNumber: 163
                             },
                             __self: this
                         },
@@ -30422,7 +30331,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstanco', type: 'text', className: 'form-control',
                         placeholder: 'Ingrese el nif de Estanco', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 163
+                            lineNumber: 164
                         },
                         __self: this
                     })
@@ -30431,7 +30340,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 166
+                            lineNumber: 167
                         },
                         __self: this
                     },
@@ -30440,7 +30349,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 167
+                                lineNumber: 168
                             },
                             __self: this
                         },
@@ -30449,7 +30358,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'numExp', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el numero Expendio', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 168
+                            lineNumber: 169
                         },
                         __self: this
                     })
@@ -30458,7 +30367,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 171
+                            lineNumber: 172
                         },
                         __self: this
                     },
@@ -30467,7 +30376,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 172
+                                lineNumber: 173
                             },
                             __self: this
                         },
@@ -30476,7 +30385,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreExp', type: 'text', className: 'form-control',
                         placeholder: 'Ingrese nombre', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 173
+                            lineNumber: 174
                         },
                         __self: this
                     })
@@ -30485,7 +30394,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 176
+                            lineNumber: 177
                         },
                         __self: this
                     },
@@ -30494,7 +30403,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 177
+                                lineNumber: 178
                             },
                             __self: this
                         },
@@ -30503,7 +30412,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'localExp', type: 'text', className: 'form-control',
                         placeholder: 'Ingrese local', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 178
+                            lineNumber: 179
                         },
                         __self: this
                     })
@@ -30512,7 +30421,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 181
+                            lineNumber: 182
                         },
                         __self: this
                     },
@@ -30530,7 +30439,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 189
+                        lineNumber: 190
                     },
                     __self: this
                 },
@@ -30538,7 +30447,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 190
+                            lineNumber: 191
                         },
                         __self: this
                     },
@@ -30547,7 +30456,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 191
+                                lineNumber: 192
                             },
                             __self: this
                         },
@@ -30556,7 +30465,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoV', type: 'text', className: 'form-control',
                         placeholder: 'Ingrese el nif Extanco', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 192
+                            lineNumber: 193
                         },
                         __self: this
                     })
@@ -30565,7 +30474,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 195
+                            lineNumber: 196
                         },
                         __self: this
                     },
@@ -30574,7 +30483,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 196
+                                lineNumber: 197
                             },
                             __self: this
                         },
@@ -30583,7 +30492,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idAlmacenV', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el id del Almacen', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 197
+                            lineNumber: 198
                         },
                         __self: this
                     })
@@ -30592,7 +30501,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 200
+                            lineNumber: 201
                         },
                         __self: this
                     },
@@ -30601,7 +30510,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 201
+                                lineNumber: 202
                             },
                             __self: this
                         },
@@ -30610,7 +30519,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioVenta', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese precio', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 202
+                            lineNumber: 203
                         },
                         __self: this
                     })
@@ -30619,7 +30528,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 205
+                            lineNumber: 206
                         },
                         __self: this
                     },
@@ -30628,7 +30537,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 206
+                                lineNumber: 207
                             },
                             __self: this
                         },
@@ -30636,7 +30545,7 @@ var FormUpdate = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaV', type: 'date', className: 'form-control', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 207
+                            lineNumber: 208
                         },
                         __self: this
                     })
@@ -30645,7 +30554,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 209
+                            lineNumber: 210
                         },
                         __self: this
                     },
@@ -30663,7 +30572,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 217
+                        lineNumber: 218
                     },
                     __self: this
                 },
@@ -30671,7 +30580,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 218
+                            lineNumber: 219
                         },
                         __self: this
                     },
@@ -30680,7 +30589,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 219
+                                lineNumber: 220
                             },
                             __self: this
                         },
@@ -30689,7 +30598,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteM', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese el id del Fabricante', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 220
+                            lineNumber: 221
                         },
                         __self: this
                     })
@@ -30698,7 +30607,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 223
+                            lineNumber: 224
                         },
                         __self: this
                     },
@@ -30707,7 +30616,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 224
+                                lineNumber: 225
                             },
                             __self: this
                         },
@@ -30716,7 +30625,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marcaM', type: 'text', className: 'form-control',
                         placeholder: 'Ingrese marca', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 225
+                            lineNumber: 226
                         },
                         __self: this
                     })
@@ -30725,7 +30634,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 228
+                            lineNumber: 229
                         },
                         __self: this
                     },
@@ -30734,7 +30643,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 229
+                                lineNumber: 230
                             },
                             __self: this
                         },
@@ -30743,7 +30652,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'carton', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese numero de carton', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 230
+                            lineNumber: 231
                         },
                         __self: this
                     })
@@ -30752,7 +30661,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 233
+                            lineNumber: 234
                         },
                         __self: this
                     },
@@ -30761,7 +30670,7 @@ var FormUpdate = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 234
+                                lineNumber: 235
                             },
                             __self: this
                         },
@@ -30770,7 +30679,7 @@ var FormUpdate = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'embalaje', type: 'number', className: 'form-control',
                         placeholder: 'Ingrese numero de embalaje', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 235
+                            lineNumber: 236
                         },
                         __self: this
                     })
@@ -30779,7 +30688,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-primary', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 238
+                            lineNumber: 239
                         },
                         __self: this
                     },
@@ -30788,15 +30697,15 @@ var FormUpdate = function (_Component) {
             );
         }
     }, {
-        key: 'render',
-        value: function render() {
+        key: 'renderForms',
+        value: function renderForms() {
             if (this.props.table === "maker") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 245
+                            lineNumber: 246
                         },
                         __self: this
                     },
@@ -30808,7 +30717,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 248
+                            lineNumber: 249
                         },
                         __self: this
                     },
@@ -30820,7 +30729,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 251
+                            lineNumber: 252
                         },
                         __self: this
                     },
@@ -30832,7 +30741,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 254
+                            lineNumber: 255
                         },
                         __self: this
                     },
@@ -30844,7 +30753,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 257
+                            lineNumber: 258
                         },
                         __self: this
                     },
@@ -30856,7 +30765,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 260
+                            lineNumber: 261
                         },
                         __self: this
                     },
@@ -30868,7 +30777,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 262
+                            lineNumber: 263
                         },
                         __self: this
                     },
@@ -30880,11 +30789,75 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 264
+                            lineNumber: 265
                         },
                         __self: this
                     },
                     this.handleFormManufacture()
+                );
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.data) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'card', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 272
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'card-body', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 273
+                            },
+                            __self: this
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h4',
+                            { className: 'card-title text-center', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 274
+                                },
+                                __self: this
+                            },
+                            'Agregar'
+                        ),
+                        this.renderForms()
+                    )
+                );
+            } else {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'card', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 281
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'card-body', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 282
+                            },
+                            __self: this
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'mx-auto alert alert-info ', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 283
+                                },
+                                __self: this
+                            },
+                            'No se ha seleccionado el registro'
+                        )
+                    )
                 );
             }
         }
@@ -30893,10 +30866,58 @@ var FormUpdate = function (_Component) {
     return FormUpdate;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* unused harmony default export */ var _unused_webpack_default_export = (FormUpdate);
+/* harmony default export */ __webpack_exports__["a"] = (FormUpdate);
 
 /***/ }),
-/* 247 */
+/* 248 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/cigarette.svg";
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/maker.svg";
+
+/***/ }),
+/* 250 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/purchases.svg";
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/Manufacture.svg";
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/sales.svg";
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/warehouse.svg";
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/watertight.svg";
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 256 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30946,25 +30967,25 @@ var Container = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Container);
 
 /***/ }),
-/* 248 */
+/* 257 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 249 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = "/media/database.svg";
 
 /***/ }),
-/* 250 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(251);
+module.exports = __webpack_require__(260);
 
 /***/ }),
-/* 251 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30972,7 +30993,7 @@ module.exports = __webpack_require__(251);
 
 var utils = __webpack_require__(13);
 var bind = __webpack_require__(108);
-var Axios = __webpack_require__(253);
+var Axios = __webpack_require__(262);
 var defaults = __webpack_require__(64);
 
 /**
@@ -31007,14 +31028,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(112);
-axios.CancelToken = __webpack_require__(267);
+axios.CancelToken = __webpack_require__(276);
 axios.isCancel = __webpack_require__(111);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(268);
+axios.spread = __webpack_require__(277);
 
 module.exports = axios;
 
@@ -31023,7 +31044,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 252 */
+/* 261 */
 /***/ (function(module, exports) {
 
 /*!
@@ -31050,7 +31071,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 253 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31058,8 +31079,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(64);
 var utils = __webpack_require__(13);
-var InterceptorManager = __webpack_require__(262);
-var dispatchRequest = __webpack_require__(263);
+var InterceptorManager = __webpack_require__(271);
+var dispatchRequest = __webpack_require__(272);
 
 /**
  * Create a new instance of Axios
@@ -31136,7 +31157,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 254 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31155,7 +31176,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 255 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31188,7 +31209,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 256 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31216,7 +31237,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 257 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31289,7 +31310,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 258 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31349,7 +31370,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 259 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31424,7 +31445,7 @@ module.exports = (
 
 
 /***/ }),
-/* 260 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31467,7 +31488,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 261 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31527,7 +31548,7 @@ module.exports = (
 
 
 /***/ }),
-/* 262 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31586,18 +31607,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 263 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(13);
-var transformData = __webpack_require__(264);
+var transformData = __webpack_require__(273);
 var isCancel = __webpack_require__(111);
 var defaults = __webpack_require__(64);
-var isAbsoluteURL = __webpack_require__(265);
-var combineURLs = __webpack_require__(266);
+var isAbsoluteURL = __webpack_require__(274);
+var combineURLs = __webpack_require__(275);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -31679,7 +31700,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 264 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31706,7 +31727,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 265 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31727,7 +31748,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 266 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31748,7 +31769,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 267 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31812,7 +31833,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 268 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

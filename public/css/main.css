@@ -161,5 +161,14 @@ body {
 .menu-home:hover {
     cursor: pointer;
     background: rgb(68, 17, 209);
+}.icon-title {
+    width: 32px;
+    height: 32px;
+}
+
+.item-form {
+    cursor: pointer;
+}.label-add {
+    width: 100px;
 }
 /*# sourceMappingURL=main.css.map*/

@@ -14,9 +14,10 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : true,
-            warehouse : false
+            warehouse : false,
+            queries : false
         }
         this.handleComponent = this.handleComponent.bind(this)
         this.handleCigarette = this.handleCigarette.bind(this)
@@ -24,35 +25,36 @@ class Home extends Component {
         this.handlePurchases = this.handlePurchases.bind(this)
         this.handleSales = this.handleSales.bind(this)
         this.handleWatertight = this.handleWatertight.bind(this)
-        this.handleOrders = this.handleOrders.bind(this)
+        this.handleManufacture = this.handleManufacture.bind(this)
         this.handleHome = this.handleHome.bind(this)
         this.handleWarehouse = this.handleWarehouse.bind(this)
+        this.handleQueries = this.handleQueries.bind(this)
     }
 
     handleComponent(){
         if (this.state.cigarette) {
-            return (<Database entity="cigarette" />)
+            return (<Database entity="cigarette" title="Cigarrillo" />)
         }
         else if (this.state.maker) {
-            return (<Database entity="maker" />)
+            return (<Database entity="maker" title="Fabricante"/>)
         }
         else if (this.state.purchases){
-            return (<Database entity="purchases" />)
+            return (<Database entity="purchases" title="Compras"/>)
         }
         else if (this.state.sales){
-            return (<Database entity="sales" />)
+            return (<Database entity="sales" title="Ventas"/>)
         }
         else if (this.state.watertight){
-            return (<Database entity="watertight" />)
+            return (<Database entity="watertight" title="Estanco"/>)
         }
-        else if (this.state.orders){
-            return (<Database entity="orders" />)
+        else if (this.state.Manufacture){
+            return (<Database entity="Manufacture" title="Manufactura"/>)
         }
         else if (this.state.home) {
             return (<Container />)
         }
         else {
-            return (<Database entity="warehouse" />)
+            return (<Database entity="warehouse" title="Almacen"/>)
         }
     }
 
@@ -63,9 +65,10 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -76,9 +79,10 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -89,9 +93,10 @@ class Home extends Component {
             purchases : true,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -102,9 +107,10 @@ class Home extends Component {
             purchases : false,
             sales : true,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -115,22 +121,24 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : true,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
-    handleOrders(){
+    handleManufacture(){
         this.setState({
             cigarette : false,
             maker : false,
             purchases : false,
             sales : false,
             watertight : false,
-            orders : true,
+            Manufacture : true,
             home : false,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -141,9 +149,10 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : true,
-            warehouse : false
+            warehouse : false,
+            queries : false
         })
     }
 
@@ -154,9 +163,24 @@ class Home extends Component {
             purchases : false,
             sales : false,
             watertight : false,
-            orders : false,
+            Manufacture : false,
             home : false,
-            warehouse : true
+            warehouse : true,
+            queries : false
+        })
+    }
+
+    handleQueries(){
+        this.setState({
+            cigarette : false,
+            maker : false,
+            purchases : false,
+            sales : false,
+            watertight : false,
+            Manufacture : false,
+            home : false,
+            warehouse : false,
+            queries : true
         })
     }
 
@@ -174,7 +198,7 @@ class Home extends Component {
                     <div className="menu-nav pt-4" onClick={this.handlePurchases}>Compras</div>
                     <div className="menu-nav pt-4" onClick={this.handleSales}>Ventas</div>
                     <div className="menu-nav pt-4" onClick={this.handleWatertight}>Estancos</div>
-                    <div className="menu-nav pt-4" onClick={this.handleOrders}>Pedidos</div>
+                    <div className="menu-nav pt-4" onClick={this.handleManufacture}>Manufactura</div>
                     <div className="menu-nav pt-4">Consultas</div>
                     <div className="menu-nav pt-4">Salir</div>
                 </div>
