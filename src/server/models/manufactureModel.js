@@ -18,7 +18,7 @@ Manufacture.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARMANUFACTURA(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Manufactura set Marca=?, Carton=?, Embalaje=?  where idFabricanteM=?`)
     }
 }
 

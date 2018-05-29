@@ -18,7 +18,7 @@ Warehouse.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARALMACEN(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Almacen set idCigarillo=?, existencia=?, numFiscal=? where idAlmacen=?`)
     }
 }
 

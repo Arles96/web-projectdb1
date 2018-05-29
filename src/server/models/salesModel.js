@@ -18,7 +18,7 @@ Sales.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARVENTAS(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Ventas set idAlmacenV=?,numFiscal=?,precioVenta=?,cantidad=?,fecha=?,idCigarillo=? where numVentas=?`)
     }
 }
 
