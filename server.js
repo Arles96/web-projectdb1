@@ -47698,7 +47698,7 @@ var FormAdd = function (_Component) {
                             },
                             __self: this
                         },
-                        'Actualizando'
+                        'Agregando'
                     ),
                     this.renderForms()
                 )
@@ -47726,6 +47726,8 @@ var FormAdd = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormUpdate_css__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormUpdate_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FormUpdate_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\FormUpdate\\FormUpdate.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -47739,12 +47741,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 /**
  * Este componente es un formulario para actualizar que recibe tres 
  * atributos que son data, table y method
  * @argument table este contiene el nombre de la tabla
  * @argument method este es la función para el evento onSubmit
- * @argument data es la informacion del registro seleccionado en la tabla
  */
 
 var FormUpdate = function (_Component) {
@@ -47755,6 +47757,9 @@ var FormUpdate = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (FormUpdate.__proto__ || Object.getPrototypeOf(FormUpdate)).call(this));
 
+        _this.state = {
+            id: null
+        };
         _this.handleFormMaker = _this.handleFormMaker.bind(_this);
         _this.handleFormCigarette = _this.handleFormCigarette.bind(_this);
         _this.handleFormManufacture = _this.handleFormManufacture.bind(_this);
@@ -47763,20 +47768,91 @@ var FormUpdate = function (_Component) {
         _this.handleFormWarehouse = _this.handleFormWarehouse.bind(_this);
         _this.handleFormWatertight = _this.handleFormWatertight.bind(_this);
         _this.renderForms = _this.renderForms.bind(_this);
+        _this.handleChangeId = _this.handleChangeId.bind(_this);
+        _this.handleDeleteRegister = _this.handleDeleteRegister.bind(_this);
         return _this;
     }
 
-    //Formulario para Agregar Fabricante
+    //Obteniendo el id cuando lo escriba
 
 
     _createClass(FormUpdate, [{
+        key: 'handleChangeId',
+        value: function handleChangeId(e) {
+            this.setState({ id: e.target.value });
+        }
+    }, {
+        key: 'handleDeleteRegister',
+        value: function handleDeleteRegister() {
+            if (this.props.table === "maker") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/fabricante', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else if (this.props.table === "warehouse") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/almacen', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else if (this.props.table === "cigarette") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/cigarrillo', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else if (this.props.table === "purchases") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/compra', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else if (this.props.table === "watertight") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/estanco', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else if (this.props.table === "sales") {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/venta', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            } else {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/eliminar/manufactura', {
+                    id: this.state.id
+                }).then(function (res) {
+                    console.log(res.data);
+                }).catch(function (err) {
+                    return console.log(err);
+                });
+            }
+        }
+
+        //Formulario para actualizar Fabricante
+
+    }, {
         key: 'handleFormMaker',
         value: function handleFormMaker() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 28
+                        lineNumber: 102
                     },
                     __self: this
                 },
@@ -47784,7 +47860,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 103
                         },
                         __self: this
                     },
@@ -47792,16 +47868,16 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 104
                             },
                             __self: this
                         },
-                        'Nombre'
+                        'id Fab.'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control form-control-sm',
-                        value: this.props.data.nombreF, __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.handleChangeId, name: 'idFabricante', type: 'text', className: 'form-control form-control-sm',
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 31
+                            lineNumber: 105
                         },
                         __self: this
                     })
@@ -47810,7 +47886,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 108
                         },
                         __self: this
                     },
@@ -47818,16 +47894,42 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 35
+                                lineNumber: 109
+                            },
+                            __self: this
+                        },
+                        'Nombre'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 110
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 113
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 114
                             },
                             __self: this
                         },
                         'Pais'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'paisF', type: 'text', className: 'form-control form-control-sm',
-                        value: this.props.data.paisF, __source: {
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 36
+                            lineNumber: 115
                         },
                         __self: this
                     })
@@ -47836,7 +47938,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-success btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 39
+                            lineNumber: 118
                         },
                         __self: this
                     },
@@ -47845,7 +47947,7 @@ var FormUpdate = function (_Component) {
             );
         }
 
-        //Formmulario para agregar Almacen
+        //Formmulario para actualizar Almacen
 
     }, {
         key: 'handleFormWarehouse',
@@ -47854,7 +47956,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 47
+                        lineNumber: 126
                     },
                     __self: this
                 },
@@ -47862,7 +47964,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 127
                         },
                         __self: this
                     },
@@ -47870,16 +47972,16 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 128
                             },
                             __self: this
                         },
-                        'Id Cigarrillo'
+                        'Nombre'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloA', type: 'number', className: 'form-control form-control-sm',
-                        value: this.props.data.idCigarrilloA, __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control form-control-sm',
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 129
                         },
                         __self: this
                     })
@@ -47888,7 +47990,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 53
+                            lineNumber: 132
                         },
                         __self: this
                     },
@@ -47896,16 +47998,67 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 133
+                            },
+                            __self: this
+                        },
+                        'Id Cigarrillo'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloA', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 134
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 137
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 138
+                            },
+                            __self: this
+                        },
+                        'NIF'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifA', type: 'number', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 139
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 141
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 142
                             },
                             __self: this
                         },
                         'Existencia'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'existencia', type: 'number', className: 'form-control form-control-sm',
-                        value: this.props.data.existencia, __source: {
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 55
+                            lineNumber: 143
                         },
                         __self: this
                     })
@@ -47914,7 +48067,7 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-success btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 58
+                            lineNumber: 146
                         },
                         __self: this
                     },
@@ -47923,7 +48076,7 @@ var FormUpdate = function (_Component) {
             );
         }
 
-        //Formluario para agregar Cigarrillos
+        //Formluario para actualizar Cigarrillos
 
     }, {
         key: 'handleFormCigarette',
@@ -47932,7 +48085,7 @@ var FormUpdate = function (_Component) {
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 66
+                        lineNumber: 154
                     },
                     __self: this
                 },
@@ -47940,7 +48093,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 155
                         },
                         __self: this
                     },
@@ -47948,16 +48101,16 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 68
+                                lineNumber: 156
                             },
                             __self: this
                         },
-                        'Id Fab.'
+                        'Id Cig.'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteC', type: 'number', className: 'form-control form-control-sm',
-                        value: this.props.data.idFabricanteC, __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrillo', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 157
                         },
                         __self: this
                     })
@@ -47966,7 +48119,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 72
+                            lineNumber: 160
                         },
                         __self: this
                     },
@@ -47974,16 +48127,16 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 73
+                                lineNumber: 161
                             },
                             __self: this
                         },
                         'Marca'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marca', type: 'text', className: 'form-control form-control-sm',
-                        value: this.props.data.marca, __source: {
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 74
+                            lineNumber: 162
                         },
                         __self: this
                     })
@@ -47992,7 +48145,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 77
+                            lineNumber: 165
                         },
                         __self: this
                     },
@@ -48000,7 +48153,7 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 78
+                                lineNumber: 166
                             },
                             __self: this
                         },
@@ -48010,7 +48163,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'contaminante', className: 'form-control form-control-sm', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 79
+                                lineNumber: 167
                             },
                             __self: this
                         },
@@ -48018,7 +48171,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 80
+                                    lineNumber: 168
                                 },
                                 __self: this
                             },
@@ -48028,7 +48181,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 81
+                                    lineNumber: 169
                                 },
                                 __self: this
                             },
@@ -48038,7 +48191,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '2', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 82
+                                    lineNumber: 170
                                 },
                                 __self: this
                             },
@@ -48048,7 +48201,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 83
+                                    lineNumber: 171
                                 },
                                 __self: this
                             },
@@ -48060,7 +48213,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 86
+                            lineNumber: 174
                         },
                         __self: this
                     },
@@ -48068,7 +48221,7 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 175
                             },
                             __self: this
                         },
@@ -48078,7 +48231,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'filtro', className: 'form-control form-control-sm', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 88
+                                lineNumber: 176
                             },
                             __self: this
                         },
@@ -48086,7 +48239,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 89
+                                    lineNumber: 177
                                 },
                                 __self: this
                             },
@@ -48096,7 +48249,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 90
+                                    lineNumber: 178
                                 },
                                 __self: this
                             },
@@ -48108,7 +48261,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 93
+                            lineNumber: 181
                         },
                         __self: this
                     },
@@ -48116,7 +48269,7 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 94
+                                lineNumber: 182
                             },
                             __self: this
                         },
@@ -48126,7 +48279,7 @@ var FormUpdate = function (_Component) {
                         'select',
                         { name: 'mentolado', className: 'form-control form-control-sm', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 95
+                                lineNumber: 183
                             },
                             __self: this
                         },
@@ -48134,7 +48287,7 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '0', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 96
+                                    lineNumber: 184
                                 },
                                 __self: this
                             },
@@ -48144,425 +48297,13 @@ var FormUpdate = function (_Component) {
                             'option',
                             { value: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 97
+                                    lineNumber: 185
                                 },
                                 __self: this
                             },
                             'No'
                         )
                     )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 100
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 101
-                            },
-                            __self: this
-                        },
-                        'Hoja'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'select',
-                        { name: 'hoja', className: 'form-control form-control-sm', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 102
-                            },
-                            __self: this
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'option',
-                            { value: '0', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 103
-                                },
-                                __self: this
-                            },
-                            'Negra'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'option',
-                            { value: '1', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 104
-                                },
-                                __self: this
-                            },
-                            'Rubia'
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 107
-                        },
-                        __self: this
-                    },
-                    'Actualizar'
-                )
-            );
-        }
-
-        //Formulario para agregar Compras
-
-    }, {
-        key: 'handleFormPurchases',
-        value: function handleFormPurchases() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'form',
-                { onSubmit: this.props.method, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 115
-                    },
-                    __self: this
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 116
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 117
-                            },
-                            __self: this
-                        },
-                        'id Almacen'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idAlmacenC', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el id del Almacen', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 118
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 121
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 122
-                            },
-                            __self: this
-                        },
-                        'Precio'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioC', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el precio de compra', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 123
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 126
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 127
-                            },
-                            __self: this
-                        },
-                        'Cantidad'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidadC', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese cantidad', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 128
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 131
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 132
-                            },
-                            __self: this
-                        },
-                        'Fecha'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaC', type: 'date', className: 'form-control form-control-sm', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 133
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 135
-                        },
-                        __self: this
-                    },
-                    'Actualizar'
-                )
-            );
-        }
-
-        //Formulario para agregar Estanco
-
-    }, {
-        key: 'handleFormWatertight',
-        value: function handleFormWatertight() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'form',
-                { onSubmit: this.props.method, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 143
-                    },
-                    __self: this
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 144
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 145
-                            },
-                            __self: this
-                        },
-                        'NIF'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstanco', type: 'text', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el nif de Estanco', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 146
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 149
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 150
-                            },
-                            __self: this
-                        },
-                        'Numero de Expendio'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'numExp', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el numero Expendio', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 151
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 154
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 155
-                            },
-                            __self: this
-                        },
-                        'Nombre'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreExp', type: 'text', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese nombre', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 156
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 159
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 160
-                            },
-                            __self: this
-                        },
-                        'Local'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'localExp', type: 'text', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese local', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 161
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 164
-                        },
-                        __self: this
-                    },
-                    'Actualizar'
-                )
-            );
-        }
-
-        //Formulario para agregar Ventas
-
-    }, {
-        key: 'handleFormSales',
-        value: function handleFormSales() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'form',
-                { onSubmit: this.props.method, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 172
-                    },
-                    __self: this
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 173
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 174
-                            },
-                            __self: this
-                        },
-                        'NIF Estanco'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoV', type: 'text', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el nif Extanco', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 175
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 178
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 179
-                            },
-                            __self: this
-                        },
-                        'id Almacen'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idAlmacenV', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el id del Almacen', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 180
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 183
-                        },
-                        __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 184
-                            },
-                            __self: this
-                        },
-                        'Precio'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioVenta', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese precio', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 185
-                        },
-                        __self: this
-                    })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -48580,20 +48321,43 @@ var FormUpdate = function (_Component) {
                             },
                             __self: this
                         },
-                        'Fecha'
+                        'Hoja'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaV', type: 'date', className: 'form-control form-control-sm', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 190
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'select',
+                        { name: 'hoja', className: 'form-control form-control-sm', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 190
+                            },
+                            __self: this
                         },
-                        __self: this
-                    })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '0', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 191
+                                },
+                                __self: this
+                            },
+                            'Negra'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'option',
+                            { value: '1', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 192
+                                },
+                                __self: this
+                            },
+                            'Rubia'
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
                     { type: 'submit', className: 'btn btn-success btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 192
+                            lineNumber: 195
                         },
                         __self: this
                     },
@@ -48602,16 +48366,16 @@ var FormUpdate = function (_Component) {
             );
         }
 
-        //Formulario para agregar Manufactura
+        //Formulario para actualizar Compras
 
     }, {
-        key: 'handleFormManufacture',
-        value: function handleFormManufacture() {
+        key: 'handleFormPurchases',
+        value: function handleFormPurchases() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'form',
                 { onSubmit: this.props.method, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 200
+                        lineNumber: 203
                     },
                     __self: this
                 },
@@ -48619,7 +48383,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 201
+                            lineNumber: 204
                         },
                         __self: this
                     },
@@ -48627,77 +48391,75 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 202
+                                lineNumber: 205
                             },
                             __self: this
                         },
-                        'Id Fab.'
+                        'No. Compra'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteM', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese el id del Fabricante', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 203
-                        },
-                        __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreF', type: 'text', className: 'form-control form-control-sm', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 206
                         },
                         __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        { className: 'mr-2 label-update', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 207
-                            },
-                            __self: this
-                        },
-                        'Marca'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marcaM', type: 'text', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese marca', __source: {
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 208
                         },
                         __self: this
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group form-inline', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 211
-                        },
-                        __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 212
+                                lineNumber: 209
                             },
                             __self: this
                         },
-                        'Carton'
+                        'id Cig.'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'carton', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese numero de carton', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloC', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 210
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 213
                         },
                         __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 214
+                            },
+                            __self: this
+                        },
+                        'NIF'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoC', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 215
+                        },
+                        __self: this
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'form-group form-inline', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 216
+                            lineNumber: 217
                         },
                         __self: this
                     },
@@ -48705,16 +48467,67 @@ var FormUpdate = function (_Component) {
                         'label',
                         { className: 'mr-2 label-update', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 217
+                                lineNumber: 218
                             },
                             __self: this
                         },
-                        'Embalaje'
+                        'Precio'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'embalaje', type: 'number', className: 'form-control form-control-sm',
-                        placeholder: 'Ingrese numero de embalaje', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioC', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 218
+                            lineNumber: 219
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 222
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 223
+                            },
+                            __self: this
+                        },
+                        'Cantidad'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidadC', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 224
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 227
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 228
+                            },
+                            __self: this
+                        },
+                        'Fecha'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaC', type: 'date', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 229
                         },
                         __self: this
                     })
@@ -48723,7 +48536,442 @@ var FormUpdate = function (_Component) {
                     'button',
                     { type: 'submit', className: 'btn btn-success btn-block', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 221
+                            lineNumber: 231
+                        },
+                        __self: this
+                    },
+                    'Actualizar'
+                )
+            );
+        }
+
+        //Formulario para actualizar Estanco
+
+    }, {
+        key: 'handleFormWatertight',
+        value: function handleFormWatertight() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'form',
+                { onSubmit: this.props.method, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 239
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 240
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 241
+                            },
+                            __self: this
+                        },
+                        'NIF'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstanco', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 242
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 244
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 245
+                            },
+                            __self: this
+                        },
+                        'No. Expendio'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'numExp', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 246
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 249
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 250
+                            },
+                            __self: this
+                        },
+                        'Nombre'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nombreExp', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 251
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 253
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 254
+                            },
+                            __self: this
+                        },
+                        'Local'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'localExp', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 255
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 257
+                        },
+                        __self: this
+                    },
+                    'Actualizar'
+                )
+            );
+        }
+
+        //Formulario para actualizar Ventas
+
+    }, {
+        key: 'handleFormSales',
+        value: function handleFormSales() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'form',
+                { onSubmit: this.props.method, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 265
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 266
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 267
+                            },
+                            __self: this
+                        },
+                        'NIF Estanco'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoV', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 268
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 270
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 271
+                            },
+                            __self: this
+                        },
+                        'id Cig.'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idCigarrilloV', type: 'number', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 272
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 274
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 275
+                            },
+                            __self: this
+                        },
+                        'NIF'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'nifEstancoV', type: 'text', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 276
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 278
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 279
+                            },
+                            __self: this
+                        },
+                        'Precio'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'precioVenta', type: 'number', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 280
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 282
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 283
+                            },
+                            __self: this
+                        },
+                        'Cantidad'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'cantidadV', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 284
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 287
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 288
+                            },
+                            __self: this
+                        },
+                        'Fecha'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'fechaV', type: 'date', className: 'form-control form-control-sm', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 289
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 291
+                        },
+                        __self: this
+                    },
+                    'Actualizar'
+                )
+            );
+        }
+
+        //Formulario para actualizar Manufactura
+
+    }, {
+        key: 'handleFormManufacture',
+        value: function handleFormManufacture() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'form',
+                { onSubmit: this.props.method, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 299
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 300
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 301
+                            },
+                            __self: this
+                        },
+                        'Marca'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'marcaM', type: 'text', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 302
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 305
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 306
+                            },
+                            __self: this
+                        },
+                        'Id Fab.'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'idFabricanteM', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 307
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 310
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 311
+                            },
+                            __self: this
+                        },
+                        'Carton'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'carton', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 312
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'form-group form-inline', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 315
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        { className: 'mr-2 label-update', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 316
+                            },
+                            __self: this
+                        },
+                        'Embalaje'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'embalaje', type: 'number', className: 'form-control form-control-sm',
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 317
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { type: 'submit', className: 'btn btn-success btn-block', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 320
                         },
                         __self: this
                     },
@@ -48740,7 +48988,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 228
+                            lineNumber: 327
                         },
                         __self: this
                     },
@@ -48752,7 +49000,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 231
+                            lineNumber: 330
                         },
                         __self: this
                     },
@@ -48764,23 +49012,11 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 234
+                            lineNumber: 333
                         },
                         __self: this
                     },
                     this.handleFormCigarette()
-                );
-            } else if (this.props.table == "orders") {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 237
-                        },
-                        __self: this
-                    },
-                    this.handleFormOrders()
                 );
             } else if (this.props.table === "purchases") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -48788,7 +49024,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 240
+                            lineNumber: 336
                         },
                         __self: this
                     },
@@ -48800,7 +49036,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 243
+                            lineNumber: 339
                         },
                         __self: this
                     },
@@ -48812,7 +49048,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 245
+                            lineNumber: 341
                         },
                         __self: this
                     },
@@ -48824,7 +49060,7 @@ var FormUpdate = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 247
+                            lineNumber: 343
                         },
                         __self: this
                     },
@@ -48840,7 +49076,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'card', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 254
+                            lineNumber: 350
                         },
                         __self: this
                     },
@@ -48848,7 +49084,7 @@ var FormUpdate = function (_Component) {
                         'div',
                         { className: 'card-body', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 255
+                                lineNumber: 351
                             },
                             __self: this
                         },
@@ -48856,7 +49092,7 @@ var FormUpdate = function (_Component) {
                             'h4',
                             { className: 'card-title text-center', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 256
+                                    lineNumber: 352
                                 },
                                 __self: this
                             },
@@ -48865,9 +49101,9 @@ var FormUpdate = function (_Component) {
                         this.renderForms(),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
-                            { className: 'mt-2 btn btn-danger btn-block', __source: {
+                            { onClick: this.handleDeleteRegister, className: 'mt-2 btn btn-danger btn-block', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 258
+                                    lineNumber: 354
                                 },
                                 __self: this
                             },
@@ -48880,7 +49116,7 @@ var FormUpdate = function (_Component) {
                     'div',
                     { className: 'card', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 264
+                            lineNumber: 360
                         },
                         __self: this
                     },
@@ -48888,7 +49124,7 @@ var FormUpdate = function (_Component) {
                         'div',
                         { className: 'card-body', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 265
+                                lineNumber: 361
                             },
                             __self: this
                         },
@@ -48896,7 +49132,7 @@ var FormUpdate = function (_Component) {
                             'div',
                             { className: 'mx-auto alert alert-info ', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 266
+                                    lineNumber: 362
                                 },
                                 __self: this
                             },
@@ -50774,7 +51010,9 @@ var route = __WEBPACK_IMPORTED_MODULE_0_express___default.a.Router(),
     username = "renevelazques@unitec.edu",
     password = "HolaMundo";
 
-route.post('/login', function (req, res, next) {
+route
+//Login del usuario
+.post('/login', function (req, res, next) {
     if (username === req.body.username && password === req.body.password) {
         res.json({ login: true });
         req.session.username = req.body.username;
@@ -50782,12 +51020,15 @@ route.post('/login', function (req, res, next) {
         res.json({ login: false });
     }
 })
+/***
+ * Inicio de obtener todos los datos de la tabla
+ */
 //Obtiene todas los datos de los cigarrillos
 .get('/cigarrillos', function (req, res) {})
 //Obtiene todos los datos de almacen
 .get('/almacen', function (req, res) {})
-//Obtienen todos los datos de pedidos
-.get('/pedidos', function (req, res) {})
+//Obtienen todos los datos de manufactura
+.get('/manufactura', function (req, res) {})
 //Obtiene todos los datos de estancos
 .get('/estancos', function (req, res) {})
 //Obtiene todos los datos de fabricantes
@@ -50795,7 +51036,61 @@ route.post('/login', function (req, res, next) {
 //obtiene todos los datos de compras
 .get('/compras', function (req, res) {})
 //obtienen todos los datos de ventas
-.get('/ventas', function (req, res) {});
+.get('/ventas', function (req, res) {})
+/**
+ * Inicio para insertar en las tablas
+ */
+//Insertar una compra
+.post('/insertar/compra', function (req, res) {})
+//Insertar una venta
+.post('/insertar/venta', function (req, res) {})
+//Insertar una estanco
+.post('/insertar/estanco', function (req, res) {})
+//Insertar una cigarrillo
+.post('/insertar/cigarrillo', function (req, res) {})
+//Insertar una manufactura
+.post('/insertar/manufactura', function (req, res) {})
+//Insertar una almacen
+.post('/insertar/almacen', function (req, res) {})
+//Insertar una fabricante
+.post('/insertar/fabricante', function (req, res) {})
+/**
+ * Inicio de actualizar los datos de la tabla
+ */
+//Actualizar los datos de compras
+.post('/actualizar/compra', function (req, res) {})
+//Actualizar los datos de ventas
+.post('/actualizar/venta', function (req, res) {})
+//Actualizar los datos de estanco
+.post('/actualizar/estanco', function (req, res) {})
+//Actualizar los datos de cigarrillo
+.post('/actualizar/cigarrillo', function (req, res) {})
+//Actualizar los datos de manufactura
+.post('/actualizar/manufactura', function (req, res) {})
+//Actualizar los datos de almacen
+.post('/actualizar/almacen', function (req, res) {})
+//Actualizar los datos de fabricante
+.post('/actualizar/fabricante', function (req, res) {})
+/**
+ * Inicio de eliminar una fila de las tablas
+ */
+//Elimina compra
+.post('/eliminar/compra', function (req, res) {})
+//Elimina venta
+.post('/eliminar/venta', function (req, res) {})
+//Elimina estanco
+.post('/eliminar/estanco', function (req, res) {})
+//Elimina manufactura
+.post('/eliminar/manufactura', function (req, res) {})
+//Elimina almacen
+.post('/eliminar/almacen', function (req, res) {})
+//Elimina fabricante
+.post('/eliminar/fabricante', function (req, res) {})
+//Elimina cigarrillo
+.post('/eliminar/cigarrillo', function (req, res) {});
+/**
+ * Aqui retorna las consultas especificas del proyecto
+ */
 
 /* harmony default export */ __webpack_exports__["a"] = (route);
 

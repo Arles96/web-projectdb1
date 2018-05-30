@@ -1,17 +1,20 @@
 import React, {Component} from 'react'
 import './FormUpdate.css'
+import axios from 'axios'
 
 /**
  * Este componente es un formulario para actualizar que recibe tres 
  * atributos que son data, table y method
  * @argument table este contiene el nombre de la tabla
  * @argument method este es la función para el evento onSubmit
- * @argument data es la informacion del registro seleccionado en la tabla
  */
 class FormUpdate extends Component{
 
     constructor(){
         super()
+        this.state = {
+            id : null
+        }
         this.handleFormMaker = this.handleFormMaker.bind(this)
         this.handleFormCigarette = this.handleFormCigarette.bind(this)
         this.handleFormManufacture = this.handleFormManufacture.bind(this)
@@ -20,59 +23,144 @@ class FormUpdate extends Component{
         this.handleFormWarehouse = this.handleFormWarehouse.bind(this)
         this.handleFormWatertight = this.handleFormWatertight.bind(this)
         this.renderForms = this.renderForms.bind(this)
+        this.handleChangeId = this.handleChangeId.bind(this)
+        this.handleDeleteRegister = this.handleDeleteRegister.bind(this)
     }
 
-    //Formulario para Agregar Fabricante
+    //Obteniendo el id cuando lo escriba
+    handleChangeId(e){
+        this.setState({id : e.target.value})
+    }
+
+    handleDeleteRegister(){
+        if(this.props.table==="maker"){
+            axios.post('/api/eliminar/fabricante', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        } 
+        else if(this.props.table==="warehouse"){
+            axios.post('/api/eliminar/almacen', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }
+        else if (this.props.table==="cigarette"){
+            axios.post('/api/eliminar/cigarrillo', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }
+        else if (this.props.table==="purchases"){
+            axios.post('/api/eliminar/compra', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }
+        else if (this.props.table==="watertight"){
+            axios.post('/api/eliminar/estanco', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }else if (this.props.table==="sales"){
+            axios.post('/api/eliminar/venta', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }else {
+            axios.post('/api/eliminar/manufactura', 
+                { 
+                    id :this.state.id
+                }).then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+        }
+    }
+
+    //Formulario para actualizar Fabricante
     handleFormMaker(){
         return (
             <form onSubmit={this.props.method} >
                 <div className="form-group form-inline">
+                    <label className="mr-2 label-update">id Fab.</label>
+                    <input onChange={this.handleChangeId} name="idFabricante" type="text" className="form-control form-control-sm" 
+                        />
+                </div>
+                <div className="form-group form-inline">
                     <label className="mr-2 label-update">Nombre</label>
                     <input name="nombreF" type="text" className="form-control form-control-sm" 
-                        value={this.props.data.nombreF}/>
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Pais</label>
                     <input name="paisF" type="text" className="form-control form-control-sm" 
-                       value={this.props.data.paisF} />
+                        />
                 </div>
                 <button type="submit" className="btn btn-success btn-block" >Actualizar</button>
             </form>
         )
     }
 
-    //Formmulario para agregar Almacen
+    //Formmulario para actualizar Almacen
     handleFormWarehouse(){
         return (
             <form onSubmit={this.props.method}>
+            <div className="form-group form-inline">
+                    <label className="mr-2 label-update">Nombre</label>
+                    <input name="nombreF" type="text" className="form-control form-control-sm" 
+                        />
+                </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Id Cigarrillo</label>
                     <input name="idCigarrilloA" type="number" className="form-control form-control-sm" 
-                        value={this.props.data.idCigarrilloA} />
+                         />
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">NIF</label>
+                    <input name="nifA" type="number" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Existencia</label>
                     <input name="existencia" type="number" className="form-control form-control-sm" 
-                        value={this.props.data.existencia}/>
+                        />
                 </div>
                 <button type="submit" className="btn btn-success btn-block">Actualizar</button>
             </form>
         )        
     }
 
-    //Formluario para agregar Cigarrillos
+    //Formluario para actualizar Cigarrillos
     handleFormCigarette(){
         return (
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
-                    <label className="mr-2 label-update">Id Fab.</label>
-                    <input name="idFabricanteC" type="number" className="form-control form-control-sm" 
-                        value={this.props.data.idFabricanteC}/>
+                    <label className="mr-2 label-update">Id Cig.</label>
+                    <input name="idCigarrillo" type="number" className="form-control form-control-sm" 
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Marca</label>
                     <input name="marca" type="text" className="form-control form-control-sm" 
-                        value={this.props.data.marca}/>
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Contaminante</label>
@@ -109,24 +197,32 @@ class FormUpdate extends Component{
         )
     }
 
-    //Formulario para agregar Compras
+    //Formulario para actualizar Compras
     handleFormPurchases(){
         return (
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
-                    <label className="mr-2 label-update">id Almacen</label>
-                    <input name="idAlmacenC" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese el id del Almacen"/>
+                    <label className="mr-2 label-update">No. Compra</label>
+                    <input name="nombreF" type="text" className="form-control form-control-sm" />
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">id Cig.</label>
+                    <input name="idCigarrilloC" type="number" className="form-control form-control-sm" 
+                        />
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">NIF</label>
+                    <input name="nifEstancoC" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Precio</label>
                     <input name="precioC" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese el precio de compra"/>
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Cantidad</label>
                     <input name="cantidadC" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese cantidad"/>
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Fecha</label>
@@ -137,53 +233,56 @@ class FormUpdate extends Component{
         )
     }
 
-    //Formulario para agregar Estanco
+    //Formulario para actualizar Estanco
     handleFormWatertight(){
         return (
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">NIF</label>
-                    <input name="nifEstanco" type="text" className="form-control form-control-sm" 
-                        placeholder="Ingrese el nif de Estanco"/>
+                    <input name="nifEstanco" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
-                        <label>Numero de Expendio</label>
+                        <label>No. Expendio</label>
                         <input name="numExp" type="number" className="form-control form-control-sm" 
-                            placeholder="Ingrese el numero Expendio"/>
+                            />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Nombre</label>
-                    <input name="nombreExp" type="text" className="form-control form-control-sm" 
-                        placeholder="Ingrese nombre"/>
+                    <input name="nombreExp" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Local</label>
-                    <input name="localExp" type="text" className="form-control form-control-sm" 
-                        placeholder="Ingrese local"/>
+                    <input name="localExp" type="text" className="form-control form-control-sm"/>
                 </div>
                 <button type="submit" className="btn btn-success btn-block">Actualizar</button>
             </form>
         )
     }
 
-    //Formulario para agregar Ventas
+    //Formulario para actualizar Ventas
     handleFormSales(){
         return(
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">NIF Estanco</label>
-                    <input name="nifEstancoV" type="text" className="form-control form-control-sm" 
-                        placeholder="Ingrese el nif Extanco"/>
+                    <input name="nifEstancoV" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
-                    <label className="mr-2 label-update">id Almacen</label>
-                    <input name="idAlmacenV" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese el id del Almacen"/>
+                    <label className="mr-2 label-update">id Cig.</label>
+                    <input name="idCigarrilloV" type="number" className="form-control form-control-sm" />
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">NIF</label>
+                    <input name="nifEstancoV" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Precio</label>
-                    <input name="precioVenta" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese precio"/>
+                    <input name="precioVenta" type="number" className="form-control form-control-sm"/>
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">Cantidad</label>
+                    <input name="cantidadV" type="number" className="form-control form-control-sm" 
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Fecha</label>
@@ -194,29 +293,29 @@ class FormUpdate extends Component{
         )
     }
 
-    //Formulario para agregar Manufactura
+    //Formulario para actualizar Manufactura
     handleFormManufacture(){
         return (
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
-                    <label className="mr-2 label-update">Id Fab.</label>
-                    <input name="idFabricanteM" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese el id del Fabricante"/>
-                </div>
-                <div className="form-group form-inline">
                     <label className="mr-2 label-update">Marca</label>
                     <input name="marcaM" type="text" className="form-control form-control-sm" 
-                        placeholder="Ingrese marca"/>
+                        />
+                </div>
+                <div className="form-group form-inline">
+                    <label className="mr-2 label-update">Id Fab.</label>
+                    <input name="idFabricanteM" type="number" className="form-control form-control-sm" 
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Carton</label>
                     <input name="carton" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese numero de carton"/>
+                        />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Embalaje</label>
                     <input name="embalaje" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese numero de embalaje"/>
+                        />
                 </div>
                 <button type="submit" className="btn btn-success btn-block">Actualizar</button>
             </form>
@@ -232,9 +331,6 @@ class FormUpdate extends Component{
        }
        else if (this.props.table==="cigarette"){
            return (<div>{this.handleFormCigarette()}</div>)
-       }
-       else if (this.props.table=="orders"){
-           return(<div>{this.handleFormOrders()}</div>)
        }
        else if (this.props.table==="purchases"){
            return (<div>{this.handleFormPurchases()}</div>)
@@ -255,7 +351,7 @@ class FormUpdate extends Component{
                     <div className="card-body" >
                     <h4 className="card-title text-center" >Actualizando</h4>
                         {this.renderForms()}
-                        <button className="mt-2 btn btn-danger btn-block">Eliminar</button>
+                        <button onClick={this.handleDeleteRegister} className="mt-2 btn btn-danger btn-block">Eliminar</button>
                     </div>
                 </div>
             )

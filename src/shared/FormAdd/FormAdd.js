@@ -237,7 +237,7 @@ class FormAdd extends Component {
         return (
             <div className="card">
                 <div className="card-body">
-                    <h4 className="card-title text-center" >Actualizando</h4>
+                    <h4 className="card-title text-center" >Agregando</h4>
                     {this.renderForms()}
                 </div>
             </div>

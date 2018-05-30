@@ -81,62 +81,62 @@ route
      * Inicio de actualizar los datos de la tabla
      */
     //Actualizar los datos de compras
-    .put('/actualizar/compra', (req, res)=>{
+    .post('/actualizar/compra', (req, res)=>{
 
     })
     //Actualizar los datos de ventas
-    .put('/actualizar/venta', (req, res)=>{
+    .post('/actualizar/venta', (req, res)=>{
         
     })
     //Actualizar los datos de estanco
-    .put('/actualizar/estanco', (req, res)=>{
+    .post('/actualizar/estanco', (req, res)=>{
         
     })
     //Actualizar los datos de cigarrillo
-    .put('/actualizar/cigarrillo', (req, res)=>{
+    .post('/actualizar/cigarrillo', (req, res)=>{
         
     })
     //Actualizar los datos de manufactura
-    .put('/actualizar/manufactura', (req, res)=>{
+    .post('/actualizar/manufactura', (req, res)=>{
         
     })
     //Actualizar los datos de almacen
-    .put('/actualizar/almacen', (req, res)=>{
+    .post('/actualizar/almacen', (req, res)=>{
         
     })
     //Actualizar los datos de fabricante
-    .put('/actualizar/fabricante', (req, res)=>{
+    .post('/actualizar/fabricante', (req, res)=>{
         
     })
     /**
      * Inicio de eliminar una fila de las tablas
      */
     //Elimina compra
-    .delete('/eliminar/compra',(req, res)=> {
+    .post('/eliminar/compra',(req, res)=> {
 
     })
     //Elimina venta
-    .delete('/eliminar/venta',(req, res)=> {
+    .post('/eliminar/venta',(req, res)=> {
 
     })
     //Elimina estanco
-    .delete('/eliminar/estanco',(req, res)=> {
+    .post('/eliminar/estanco',(req, res)=> {
 
     })
     //Elimina manufactura
-    .delete('/eliminar/manufactura',(req, res)=> {
+    .post('/eliminar/manufactura',(req, res)=> {
 
     })
     //Elimina almacen
-    .delete('/eliminar/almacen',(req, res)=> {
+    .post('/eliminar/almacen',(req, res)=> {
 
     })
     //Elimina fabricante
-    .delete('/eliminar/fabricante',(req, res)=> {
+    .post('/eliminar/fabricante',(req, res)=> {
 
     })
     //Elimina cigarrillo
-    .delete('/eliminar/cigarrillo', (req, res)=> {
+    .post('/eliminar/cigarrillo', (req, res)=> {
 
     })
     /**
