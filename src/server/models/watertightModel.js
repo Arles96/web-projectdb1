@@ -18,7 +18,8 @@ Watertight.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARESTANCO(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Estanco set nombre=?, Provincia=?,numExp=? where numFiscal=?`)
+        
     }
 }
 

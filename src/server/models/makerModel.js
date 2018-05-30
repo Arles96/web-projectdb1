@@ -18,7 +18,7 @@ Maker.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARFABRICANTE(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Fabricante set nombreF=?, pais=? where idFabricante=?`)
     }
 }
 

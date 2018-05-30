@@ -18,7 +18,7 @@ Cigarette.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARCIGARILLO(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Cigarillo set contaminante=?, filtro=?, mentolado=?, hoja=?, Marca=?, idFabricante=?, precio_costo=?, precio_venta=?, MED_CALIDAD=? where idCigarillo=?`)
     }
 }
 

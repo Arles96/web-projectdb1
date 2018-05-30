@@ -18,7 +18,7 @@ Purchases.save = (data, checker, cb)=> {
         conn.query(`CALL INSERTARCOMPRA(?,?,?,?)`, data, cb)
     }else {
         //query para actualizar
-        conn.query(``)
+        conn.query(`UPDATE Compra set idAlmacen=?,precioCompra=?,cantidad=?,fecha=?,numFiscal=?,marca=?,filtro=?,color=?,clase=?,mentol=? where numCompra=?`);
     }
 }
 
