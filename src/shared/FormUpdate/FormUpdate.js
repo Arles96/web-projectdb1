@@ -30,6 +30,7 @@ class FormUpdate extends Component{
     //Obteniendo el id cuando lo escriba
     handleChangeId(e){
         this.setState({id : e.target.value})
+        console.log("Hola"+ this.state.id)
     }
 
     handleDeleteRegister(){
@@ -102,7 +103,7 @@ class FormUpdate extends Component{
             <form onSubmit={this.props.method} >
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">id Fab.</label>
-                    <input onChange={this.handleChangeId} name="idFabricante" type="text" className="form-control form-control-sm" 
+                    <input onChange={this.handleChangeId} name="idFabricante" type="number" className="form-control form-control-sm" 
                         />
                 </div>
                 <div className="form-group form-inline">
@@ -125,9 +126,9 @@ class FormUpdate extends Component{
         return (
             <form onSubmit={this.props.method}>
             <div className="form-group form-inline">
-                    <label className="mr-2 label-update">Nombre</label>
-                    <input name="nombreF" type="text" className="form-control form-control-sm" 
-                        />
+                    <label className="mr-2 label-update">idAlmacen</label>
+                    <input  name="idAlmacen" type="number" className="form-control form-control-sm" 
+                        onChange={this.handleChangeId}/>
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Id Cigarrillo</label>
@@ -136,7 +137,7 @@ class FormUpdate extends Component{
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">NIF</label>
-                    <input name="nifA" type="number" className="form-control form-control-sm" />
+                    <input name="nifA" type="text" className="form-control form-control-sm" />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Existencia</label>
@@ -155,7 +156,7 @@ class FormUpdate extends Component{
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Id Cig.</label>
                     <input name="idCigarrillo" type="number" className="form-control form-control-sm" 
-                        />
+                        onChange={this.handleChangeId}/>
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Marca</label>
@@ -203,7 +204,7 @@ class FormUpdate extends Component{
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">No. Compra</label>
-                    <input name="nombreF" type="text" className="form-control form-control-sm" />
+                    <input name="numCompra" type="number" className="form-control form-control-sm" onChange={this.handleChangeId} />
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">id Cig.</label>
@@ -239,7 +240,7 @@ class FormUpdate extends Component{
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">NIF</label>
-                    <input name="nifEstanco" type="text" className="form-control form-control-sm" />
+                    <input name="nifEstanco" type="text" className="form-control form-control-sm" onChange={this.handleChangeId}/>
                 </div>
                 <div className="form-group form-inline">
                         <label>No. Expendio</label>
@@ -264,8 +265,8 @@ class FormUpdate extends Component{
         return(
             <form onSubmit={this.props.method}>
                 <div className="form-group form-inline">
-                    <label className="mr-2 label-update">NIF Estanco</label>
-                    <input name="nifEstancoV" type="text" className="form-control form-control-sm" />
+                    <label className="mr-2 label-update">No. Venta</label>
+                    <input name="numVenta" type="number" className="form-control form-control-sm" onChange={this.handleChangeId}/>
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">id Cig.</label>
@@ -300,7 +301,7 @@ class FormUpdate extends Component{
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Marca</label>
                     <input name="marcaM" type="text" className="form-control form-control-sm" 
-                        />
+                        onChange={this.handleChangeId}/>
                 </div>
                 <div className="form-group form-inline">
                     <label className="mr-2 label-update">Id Fab.</label>
@@ -345,27 +346,16 @@ class FormUpdate extends Component{
     }
 
     render(){
-        if (this.props.data){
-            return (
-                <div className="card" >
-                    <div className="card-body" >
-                    <h4 className="card-title text-center" >Actualizando</h4>
-                        {this.renderForms()}
-                        <button onClick={this.handleDeleteRegister} className="mt-2 btn btn-danger btn-block">Eliminar</button>
-                    </div>
+        return (
+            <div className="card" >
+                <div className="card-body" >
+                <h4 className="card-title text-center" >Actualizando</h4>
+                    {this.renderForms()}
+                    <button onClick={this.handleDeleteRegister} className="mt-2 btn btn-danger btn-block">Eliminar</button>
                 </div>
-            )
-        }else {
-            return (
-                <div className="card">
-                    <div className="card-body" >
-                        <div className="mx-auto alert alert-info " >
-                            No se ha seleccionado el registro
-                        </div>
-                    </div>
-                </div>
-            )
-        }
+            </div>
+        )
+        
     }
 
 }

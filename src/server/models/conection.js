@@ -9,7 +9,8 @@ const connection = mysql.createConnection({
 })
 
 connection.connect((err)=>{
-    return (err) ? console.log(`Error al Conectarse a MySQL: ${err.stack}`) : console.log(`Conexion establecida con MySQL N°: ${myConn.threadId}`)
+    return (err) ? console.log(`Error al Conectarse a MySQL: ${err.stack}`) : 
+        console.log(`Conexion establecida con MySQL N°: ${connection.threadId}`)
 })
 
 export default connection

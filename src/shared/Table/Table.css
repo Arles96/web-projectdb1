@@ -1,0 +1,5 @@
+.scroll {
+    height: 80vh !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+}

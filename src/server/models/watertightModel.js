@@ -15,16 +15,16 @@ Watertight.getOne = (id, cb) => {
 Watertight.save = (data, checker, cb)=> {
     //si es verdadero inserta los datos
     if (checker){
-        conn.query(`CALL INSERTARESTANCO(?,?,?,?)`, data, cb)
+        conn.query(`CALL insertarEstanco('${data.nombre}', '${data.Provincia}', ${data.numExp}, '${data.numFiscal}')`, data, cb)
     }else {
         //query para actualizar
-        conn.query(`UPDATE Estanco set nombre=?, Provincia=?,numExp=? where numFiscal=?`)
+        conn.query(`UPDATE Estanco set nombre='${data.nombre}', Provincia='${data.Provincia}',numExp=${data.numExp} where numFiscal='${data.numFiscal}'`, cb)
         
     }
 }
 
 Watertight.delete = (id, cb) => {
-    conn.query(`CALL DELETEESTANCO(?)`, id, cb)
+    conn.query(`DELETE FROM estanco WHERE numFiscal='${id}'`, id, cb)
 }
 
 export default Watertight

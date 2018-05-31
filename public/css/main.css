@@ -168,7 +168,12 @@ body {
 
 .item-form {
     cursor: pointer;
-}.label-update {
+}.scroll {
+    height: 80vh !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+}
+.label-update {
     width: 90px;
 }.label-add {
     width: 100px;

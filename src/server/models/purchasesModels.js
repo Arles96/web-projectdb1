@@ -13,12 +13,12 @@ Purchases.getOne = (id, cb) => {
 }
 
 Purchases.save = (data, checker, cb)=> {
-    //si es verdadero inserta los datos
+    //si es verdadero inserta los datos*
     if (checker){
-        conn.query(`CALL INSERTARCOMPRA(?,?,?,?)`, data, cb)
+        conn.query(`INSERT INTO compra SET ?`, data, cb)
     }else {
         //query para actualizar
-        conn.query(`UPDATE Compra set idAlmacen=?,precioCompra=?,cantidad=?,fecha=?,numFiscal=?,marca=?,filtro=?,color=?,clase=?,mentol=? where numCompra=?`);
+        conn.query(`UPDATE Compra set precioCompra=${data.precioCompra},cantidad=${data.cantidad},fecha=${data.fecha},numFiscal=${data.numFiscal}, idCigarillo=${data.idCigarillo} where numCompra=${data.numCompra}`, cb);
     }
 }
 

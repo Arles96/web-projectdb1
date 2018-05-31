@@ -51,7 +51,7 @@ class FormAdd extends Component {
                         placeholder="Ingrese cantidad en existencia"/>
                 </div>
                 <div className="form-group">
-                    <input name="nifEstancoA" type="number" className="form-control form-control-sm" 
+                    <input name="nifEstancoA" type="text" className="form-control form-control-sm" 
                         placeholder="Ingrese número fiscal del estanco"/>
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">Agregar</button>
@@ -63,13 +63,6 @@ class FormAdd extends Component {
     handleFormCigarette(){
         return (
             <form onSubmit={this.props.method}>
-                <div className="form-group form-inline">
-                    <div>
-                        <label className="mr-3 label-add">Id Fabricante:</label>
-                    </div>
-                    <input name="idFabricanteC" type="number" className="form-control form-control-sm" 
-                        placeholder="Ingrese id Fabricante"/>
-                </div>
                 <div className="form-group form-inline">
                     <label className="mr-3 label-add">Marca</label>
                     <input name="marca" type="text" className="form-control form-control-sm" 
@@ -129,6 +122,10 @@ class FormAdd extends Component {
                 <div className="form-group">
                     <input name="fechaC" type="date" className="form-control form-control-sm" />
                 </div>
+                <div className="form-group">
+                    <input name="nifEstancoC" type="text" className="form-control form-control-sm" 
+                        placeholder="Ingrese el nif de Estanco"/>
+                </div>
                 <button type="submit" className="btn btn-primary">Agregar</button>
             </form>
         )
@@ -176,6 +173,10 @@ class FormAdd extends Component {
                         placeholder="Ingrese precio"/>
                 </div>
                 <div className="form-group">
+                    <input name="cantidadV" type="number" className="form-control form-control-sm" 
+                        placeholder="Ingrese cantidad"/>
+                </div>
+                <div className="form-group">
                     <input name="fechaV" type="date" className="form-control form-control-sm" />
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">Agregar</button>
@@ -217,9 +218,6 @@ class FormAdd extends Component {
        }
        else if (this.props.table==="cigarette"){
            return (<div>{this.handleFormCigarette()}</div>)
-       }
-       else if (this.props.table=="Manufacture"){
-           return(<div>{this.handleFormManufacture()}</div>)
        }
        else if (this.props.table==="purchases"){
            return (<div>{this.handleFormPurchases()}</div>)

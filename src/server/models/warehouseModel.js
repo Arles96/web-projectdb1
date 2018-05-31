@@ -15,15 +15,15 @@ Warehouse.getOne = (id, cb) => {
 Warehouse.save = (data, checker, cb)=> {
     //si es verdadero inserta los datos
     if (checker){
-        conn.query(`CALL INSERTARALMACEN(?,?,?,?)`, data, cb)
+        conn.query(`CALL insertAlmacen1(${data.idCigarillo}, ${data.existencia}, '${data.numFiscal}')`, cb)
     }else {
         //query para actualizar
-        conn.query(`UPDATE Almacen set idCigarillo=?, existencia=?, numFiscal=? where idAlmacen=?`)
+        conn.query(`UPDATE Almacen set idCigarillo=${data.idCigarillo}, existencia=${data.existencia}, numFiscal='${data.numFiscal}' where idAlmacen=${data.idAlmacen}`, cb)
     }
 }
 
 Warehouse.delete = (id, cb) => {
-    conn.query(`CALL DELETEALMACEN(?)`, id, cb)
+    conn.query(`DELETE FROM Almacen WHERE idAlmacen=?`, id, cb)
 }
 
 export default Warehouse
