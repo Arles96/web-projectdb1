@@ -12,7 +12,7 @@ import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 
 const app = express();
-const server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000
+const server_port = process.env.PORT || 3000
 const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
 /**
  * Agregando los middleware
