@@ -3,9 +3,9 @@ import mysql from 'mysql'
 const connection = mysql.createConnection({
     host : 'k9xdebw4k3zynl4u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     port : '3306',
-    user : 'j303kx7r2zulke5c',
-    password : 'qyzcfrteuldo6d6r',
-    database : 'yfzmyuv46lj1dits'
+    user : 'pokfui235crzjltl',
+    password : 'ewgt1qkpb9l4w3yg',
+    database : 'uhdyqegavsyojnti'
 })
 
 connection.connect((err)=>{
