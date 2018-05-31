@@ -2673,11 +2673,11 @@ module.exports = ReactCurrentOwner;
 
 
 var connection = __WEBPACK_IMPORTED_MODULE_0_mysql___default.a.createConnection({
-    host: 'mysql',
+    host: 'k9xdebw4k3zynl4u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     port: '3306',
-    user: 'database',
-    password: 'HelloWorld',
-    database: 'tabacalera123'
+    user: 'pokfui235crzjltl',
+    password: 'ewgt1qkpb9l4w3yg',
+    database: 'uhdyqegavsyojnti'
 });
 
 connection.connect(function (err) {
@@ -27706,7 +27706,7 @@ var _jsxFileName = "C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\se
 
 
 var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var server_port = process.env.PORT || 3000;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
 /**
  * Agregando los middleware
