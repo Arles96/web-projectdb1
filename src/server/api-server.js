@@ -6,7 +6,8 @@ import purchases from './models/purchasesModels'
 import sales from './models/salesModel'
 import warehouse from './models/warehouseModel'
 import watertight from './models/watertightModel'
-import Warehouse from './models/warehouseModel';
+import Warehouse from './models/warehouseModel'
+import respuesta from './models/consulta'
 
 const route = express.Router(),
     username = "renevelazques@unitec.edu",
@@ -305,5 +306,71 @@ route
     /**
      * Aqui retorna las consultas especificas del proyecto
      */
+    .get('/consulta1', (req, res)=> {
+        respuesta.consulta1((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
+    .get('/consulta2', (req, res)=> {
+        respuesta.consulta2((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
+    .get('/consulta3', (req, res)=> {
+        respuesta.consulta3((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
+    .get('/consulta4', (req, res)=> {
+        respuesta.consulta4((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
+    .get('/consulta5', (req, res)=> {
+        respuesta.consulta5((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
+    .get('/consulta9', (req, res)=> {
+        respuesta.consulta9((err, result)=> {
+            if (err) {
+                console.log(err)
+            }else {
+                res.json({
+                    consulta : result 
+                })
+            }
+        })
+    })
 
 export default route

@@ -161,6 +161,9 @@ body {
 .menu-home:hover {
     cursor: pointer;
     background: rgb(68, 17, 209);
+}.consult {
+    height: 100vh;
+    overflow-y: scroll;
 }.icon-title {
     width: 32px;
     height: 32px;

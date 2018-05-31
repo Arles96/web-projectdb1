@@ -1772,7 +1772,7 @@ var CallbackQueue = __webpack_require__(77);
 var PooledClass = __webpack_require__(20);
 var ReactFeatureFlags = __webpack_require__(78);
 var ReactReconciler = __webpack_require__(23);
-var Transaction = __webpack_require__(34);
+var Transaction = __webpack_require__(35);
 
 var invariant = __webpack_require__(1);
 
@@ -2514,7 +2514,7 @@ var _assign = __webpack_require__(4);
 var ReactCurrentOwner = __webpack_require__(15);
 
 var warning = __webpack_require__(2);
-var canDefineProperty = __webpack_require__(31);
+var canDefineProperty = __webpack_require__(32);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = __webpack_require__(68);
@@ -2992,7 +2992,7 @@ var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
   var lowPriorityWarning = __webpack_require__(41);
-  var canDefineProperty = __webpack_require__(31);
+  var canDefineProperty = __webpack_require__(32);
   var ReactElementValidator = __webpack_require__(70);
   var didWarnPropTypesDeprecated = false;
   createElement = ReactElementValidator.createElement;
@@ -3329,7 +3329,7 @@ module.exports = ReactReconciler;
 
 
 var DOMNamespaces = __webpack_require__(49);
-var setInnerHTML = __webpack_require__(36);
+var setInnerHTML = __webpack_require__(37);
 
 var createMicrosoftUnsafeLocalFunction = __webpack_require__(50);
 var setTextContent = __webpack_require__(82);
@@ -3593,7 +3593,7 @@ module.exports = EventPropagators;
 
 var _prodInvariant = __webpack_require__(3);
 
-var EventPluginRegistry = __webpack_require__(33);
+var EventPluginRegistry = __webpack_require__(34);
 var EventPluginUtils = __webpack_require__(43);
 var ReactErrorUtils = __webpack_require__(44);
 
@@ -4111,6 +4111,12 @@ var createPath = function createPath(location) {
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(250);
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
@@ -4140,7 +4146,7 @@ module.exports = canDefineProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4166,7 +4172,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4425,7 +4431,7 @@ module.exports = EventPluginRegistry;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4659,7 +4665,7 @@ module.exports = TransactionImpl;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4736,7 +4742,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 module.exports = SyntheticMouseEvent;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4839,7 +4845,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = setInnerHTML;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4966,7 +4972,7 @@ function escapeTextContentForBrowser(text) {
 module.exports = escapeTextContentForBrowser;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4984,7 +4990,7 @@ module.exports = escapeTextContentForBrowser;
 
 var _assign = __webpack_require__(4);
 
-var EventPluginRegistry = __webpack_require__(33);
+var EventPluginRegistry = __webpack_require__(34);
 var ReactEventEmitterMixin = __webpack_require__(163);
 var ViewportMetrics = __webpack_require__(81);
 
@@ -5295,7 +5301,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 module.exports = ReactBrowserEventEmitter;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5369,12 +5375,6 @@ var createLocation = function createLocation(path, state, key, currentLocation) 
 var locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && Object(__WEBPACK_IMPORTED_MODULE_1_value_equal__["default"])(a.state, b.state);
 };
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(250);
 
 /***/ }),
 /* 41 */
@@ -5958,7 +5958,7 @@ var ReactDOMComponentTree = __webpack_require__(6);
 var ReactInstrumentation = __webpack_require__(11);
 
 var createMicrosoftUnsafeLocalFunction = __webpack_require__(50);
-var setInnerHTML = __webpack_require__(36);
+var setInnerHTML = __webpack_require__(37);
 var setTextContent = __webpack_require__(82);
 
 function getNodeAfter(parentNode, node) {
@@ -7872,8 +7872,8 @@ var _prodInvariant = __webpack_require__(22),
 
 var ReactNoopUpdateQueue = __webpack_require__(67);
 
-var canDefineProperty = __webpack_require__(31);
-var emptyObject = __webpack_require__(32);
+var canDefineProperty = __webpack_require__(32);
+var emptyObject = __webpack_require__(33);
 var invariant = __webpack_require__(1);
 var lowPriorityWarning = __webpack_require__(41);
 
@@ -8201,7 +8201,7 @@ var ReactElement = __webpack_require__(19);
 
 var checkReactTypeSpec = __webpack_require__(119);
 
-var canDefineProperty = __webpack_require__(31);
+var canDefineProperty = __webpack_require__(32);
 var getIteratorFn = __webpack_require__(69);
 var warning = __webpack_require__(2);
 var lowPriorityWarning = __webpack_require__(41);
@@ -9525,8 +9525,8 @@ module.exports = ViewportMetrics;
 
 
 var ExecutionEnvironment = __webpack_require__(7);
-var escapeTextContentForBrowser = __webpack_require__(37);
-var setInnerHTML = __webpack_require__(36);
+var escapeTextContentForBrowser = __webpack_require__(38);
+var setInnerHTML = __webpack_require__(37);
 
 /**
  * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -10980,7 +10980,7 @@ var _prodInvariant = __webpack_require__(3);
 var DOMLazyTree = __webpack_require__(24);
 var DOMProperty = __webpack_require__(18);
 var React = __webpack_require__(21);
-var ReactBrowserEventEmitter = __webpack_require__(38);
+var ReactBrowserEventEmitter = __webpack_require__(39);
 var ReactCurrentOwner = __webpack_require__(15);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactDOMContainerInfo = __webpack_require__(204);
@@ -10993,10 +10993,10 @@ var ReactReconciler = __webpack_require__(23);
 var ReactUpdateQueue = __webpack_require__(56);
 var ReactUpdates = __webpack_require__(16);
 
-var emptyObject = __webpack_require__(32);
+var emptyObject = __webpack_require__(33);
 var instantiateReactComponent = __webpack_require__(88);
 var invariant = __webpack_require__(1);
-var setInnerHTML = __webpack_require__(36);
+var setInnerHTML = __webpack_require__(37);
 var shouldUpdateReactComponent = __webpack_require__(54);
 var warning = __webpack_require__(2);
 
@@ -12126,7 +12126,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_logo_svg__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_logo_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_logo_svg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Database_Database__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Container_Container__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Container_Container__ = __webpack_require__(278);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Home\\Home.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12221,17 +12221,23 @@ var Home = function (_Component) {
                     __self: this
                 });
             } else if (this.state.home) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Container_Container__["a" /* default */], {
-                    __source: {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Container_Container__["a" /* default */], { topic: 'home', __source: {
                         fileName: _jsxFileName,
                         lineNumber: 54
+                    },
+                    __self: this
+                });
+            } else if (this.state.queries) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Container_Container__["a" /* default */], { topic: 'consult', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 57
                     },
                     __self: this
                 });
             } else {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Database_Database__["a" /* default */], { entity: 'warehouse', title: 'Almacen', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 57
+                        lineNumber: 60
                     },
                     __self: this
                 });
@@ -12379,7 +12385,7 @@ var Home = function (_Component) {
                 'div',
                 { className: 'row m-0', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 189
+                        lineNumber: 192
                     },
                     __self: this
                 },
@@ -12387,7 +12393,7 @@ var Home = function (_Component) {
                     'div',
                     { id: 'style-2', className: 'col-md-2 menu p-0', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 190
+                            lineNumber: 193
                         },
                         __self: this
                     },
@@ -12395,13 +12401,13 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-home', onClick: this.handleHome, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 191
+                                lineNumber: 194
                             },
                             __self: this
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__img_logo_svg___default.a, className: 'App-logo', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 192
+                                lineNumber: 195
                             },
                             __self: this
                         }),
@@ -12409,7 +12415,7 @@ var Home = function (_Component) {
                             'h5',
                             { className: 'm-3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 193
+                                    lineNumber: 196
                                 },
                                 __self: this
                             },
@@ -12420,7 +12426,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleMaker, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 195
+                                lineNumber: 198
                             },
                             __self: this
                         },
@@ -12430,7 +12436,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleCigarette, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 196
+                                lineNumber: 199
                             },
                             __self: this
                         },
@@ -12440,7 +12446,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleWarehouse, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 197
+                                lineNumber: 200
                             },
                             __self: this
                         },
@@ -12450,7 +12456,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handlePurchases, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 198
+                                lineNumber: 201
                             },
                             __self: this
                         },
@@ -12460,7 +12466,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleSales, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 199
+                                lineNumber: 202
                             },
                             __self: this
                         },
@@ -12470,7 +12476,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleWatertight, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 200
+                                lineNumber: 203
                             },
                             __self: this
                         },
@@ -12480,7 +12486,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', onClick: this.handleManufacture, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 201
+                                lineNumber: 204
                             },
                             __self: this
                         },
@@ -12488,9 +12494,9 @@ var Home = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'menu-nav pt-4', __source: {
+                        { className: 'menu-nav pt-4', onClick: this.handleQueries, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 202
+                                lineNumber: 205
                             },
                             __self: this
                         },
@@ -12500,7 +12506,7 @@ var Home = function (_Component) {
                         'div',
                         { className: 'menu-nav pt-4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 203
+                                lineNumber: 206
                             },
                             __self: this
                         },
@@ -12511,7 +12517,7 @@ var Home = function (_Component) {
                     'div',
                     { className: 'col-md-10', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 205
+                            lineNumber: 208
                         },
                         __self: this
                     },
@@ -12802,11 +12808,11 @@ module.exports = Cancel;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Login_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_database_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_database_svg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Login\\Login.js';
 
@@ -14048,7 +14054,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 var _assign = __webpack_require__(4);
 
-var emptyObject = __webpack_require__(32);
+var emptyObject = __webpack_require__(33);
 var _invariant = __webpack_require__(1);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -16898,7 +16904,7 @@ module.exports = DefaultEventPluginOrder;
 
 var EventPropagators = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(6);
-var SyntheticMouseEvent = __webpack_require__(35);
+var SyntheticMouseEvent = __webpack_require__(36);
 
 var eventTypes = {
   mouseEnter: {
@@ -17699,8 +17705,8 @@ var DOMNamespaces = __webpack_require__(49);
 var DOMProperty = __webpack_require__(18);
 var DOMPropertyOperations = __webpack_require__(85);
 var EventPluginHub = __webpack_require__(26);
-var EventPluginRegistry = __webpack_require__(33);
-var ReactBrowserEventEmitter = __webpack_require__(38);
+var EventPluginRegistry = __webpack_require__(34);
+var ReactBrowserEventEmitter = __webpack_require__(39);
 var ReactDOMComponentFlags = __webpack_require__(73);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactDOMInput = __webpack_require__(165);
@@ -17712,7 +17718,7 @@ var ReactMultiChild = __webpack_require__(168);
 var ReactServerRenderingTransaction = __webpack_require__(177);
 
 var emptyFunction = __webpack_require__(10);
-var escapeTextContentForBrowser = __webpack_require__(37);
+var escapeTextContentForBrowser = __webpack_require__(38);
 var invariant = __webpack_require__(1);
 var isEventSupported = __webpack_require__(46);
 var shallowEqual = __webpack_require__(53);
@@ -19237,7 +19243,7 @@ module.exports = memoizeStringOnly;
 
 
 
-var escapeTextContentForBrowser = __webpack_require__(37);
+var escapeTextContentForBrowser = __webpack_require__(38);
 
 /**
  * Escapes attribute value to prevent scripting attacks.
@@ -20625,7 +20631,7 @@ if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(171);
 }
 
-var emptyObject = __webpack_require__(32);
+var emptyObject = __webpack_require__(33);
 var invariant = __webpack_require__(1);
 var shallowEqual = __webpack_require__(53);
 var shouldUpdateReactComponent = __webpack_require__(54);
@@ -21821,7 +21827,7 @@ module.exports = flattenChildren;
 var _assign = __webpack_require__(4);
 
 var PooledClass = __webpack_require__(20);
-var Transaction = __webpack_require__(34);
+var Transaction = __webpack_require__(35);
 var ReactInstrumentation = __webpack_require__(11);
 var ReactServerUpdateQueue = __webpack_require__(178);
 
@@ -22273,7 +22279,7 @@ var DOMChildrenOperations = __webpack_require__(48);
 var DOMLazyTree = __webpack_require__(24);
 var ReactDOMComponentTree = __webpack_require__(6);
 
-var escapeTextContentForBrowser = __webpack_require__(37);
+var escapeTextContentForBrowser = __webpack_require__(38);
 var invariant = __webpack_require__(1);
 var validateDOMNesting = __webpack_require__(57);
 
@@ -22437,7 +22443,7 @@ module.exports = ReactDOMTextComponent;
 var _assign = __webpack_require__(4);
 
 var ReactUpdates = __webpack_require__(16);
-var Transaction = __webpack_require__(34);
+var Transaction = __webpack_require__(35);
 
 var emptyFunction = __webpack_require__(10);
 
@@ -22716,7 +22722,7 @@ var EventPluginHub = __webpack_require__(26);
 var EventPluginUtils = __webpack_require__(43);
 var ReactComponentEnvironment = __webpack_require__(52);
 var ReactEmptyComponent = __webpack_require__(90);
-var ReactBrowserEventEmitter = __webpack_require__(38);
+var ReactBrowserEventEmitter = __webpack_require__(39);
 var ReactHostComponent = __webpack_require__(91);
 var ReactUpdates = __webpack_require__(16);
 
@@ -22754,10 +22760,10 @@ var _assign = __webpack_require__(4);
 
 var CallbackQueue = __webpack_require__(77);
 var PooledClass = __webpack_require__(20);
-var ReactBrowserEventEmitter = __webpack_require__(38);
+var ReactBrowserEventEmitter = __webpack_require__(39);
 var ReactInputSelection = __webpack_require__(94);
 var ReactInstrumentation = __webpack_require__(11);
-var Transaction = __webpack_require__(34);
+var Transaction = __webpack_require__(35);
 var ReactUpdateQueue = __webpack_require__(56);
 
 /**
@@ -23846,7 +23852,7 @@ var SyntheticClipboardEvent = __webpack_require__(196);
 var SyntheticEvent = __webpack_require__(17);
 var SyntheticFocusEvent = __webpack_require__(197);
 var SyntheticKeyboardEvent = __webpack_require__(198);
-var SyntheticMouseEvent = __webpack_require__(35);
+var SyntheticMouseEvent = __webpack_require__(36);
 var SyntheticDragEvent = __webpack_require__(200);
 var SyntheticTouchEvent = __webpack_require__(201);
 var SyntheticTransitionEvent = __webpack_require__(202);
@@ -24401,7 +24407,7 @@ module.exports = getEventKey;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(35);
+var SyntheticMouseEvent = __webpack_require__(36);
 
 /**
  * @interface DragEvent
@@ -24536,7 +24542,7 @@ module.exports = SyntheticTransitionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(35);
+var SyntheticMouseEvent = __webpack_require__(36);
 
 /**
  * @interface WheelEvent
@@ -24866,7 +24872,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 
 
 var DOMProperty = __webpack_require__(18);
-var EventPluginRegistry = __webpack_require__(33);
+var EventPluginRegistry = __webpack_require__(34);
 var ReactComponentTreeHook = __webpack_require__(9);
 
 var warning = __webpack_require__(2);
@@ -27022,7 +27028,7 @@ Redirect.contextTypes = {
 /* unused harmony reexport createHashHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(233);
 /* unused harmony reexport createMemoryHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(40);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(30);
@@ -27047,7 +27053,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(105);
@@ -27351,7 +27357,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(105);
@@ -27671,7 +27677,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(64);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -28334,7 +28340,7 @@ module.exports = "/media/logo.svg";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__img_watertight_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__img_watertight_svg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Database_css__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Database_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__Database_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_axios__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_axios__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__Table_Table__ = __webpack_require__(276);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Database\\Database.js';
@@ -29814,7 +29820,7 @@ var FormAdd = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormUpdate_css__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormUpdate_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__FormUpdate_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\FormUpdate\\FormUpdate.js';
 
@@ -32150,9 +32156,9 @@ module.exports = "/media/watertight.svg";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Table_css__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Table_css__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Table_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Table_css__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Table\\Table.js';
 
@@ -33620,11 +33626,21 @@ var Table = function (_Component) {
 
 /***/ }),
 /* 277 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 278 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container_css__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Container_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 var _jsxFileName = 'C:\\Users\\arles\\Documents\\GitHub\\web-projectdb1\\src\\shared\\Container\\Container.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -33637,29 +33653,762 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
 var Container = function (_Component) {
     _inherits(Container, _Component);
 
     function Container() {
         _classCallCheck(this, Container);
 
-        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this));
+
+        _this.state = {
+            consulta1: [],
+            consulta2: [],
+            consulta3: [],
+            consulta4: [],
+            consulta5: [],
+            consulta9: []
+        };
+        _this.handleHome = _this.handleHome.bind(_this);
+        _this.handleQuerie = _this.handleQuerie.bind(_this);
+        _this.handleConsult1 = _this.handleConsult1.bind(_this);
+        _this.handleConsult2 = _this.handleConsult2.bind(_this);
+        _this.handleConsult3 = _this.handleConsult3.bind(_this);
+        _this.handleConsult4 = _this.handleConsult4.bind(_this);
+        _this.handleConsult5 = _this.handleConsult5.bind(_this);
+        _this.handleConsult9 = _this.handleConsult9.bind(_this);
+        _this.renderConsult1 = _this.renderConsult1.bind(_this);
+        _this.renderConsult2 = _this.renderConsult2.bind(_this);
+        _this.renderConsult3 = _this.renderConsult3.bind(_this);
+        _this.renderConsult4 = _this.renderConsult4.bind(_this);
+        _this.renderConsult5 = _this.renderConsult5.bind(_this);
+        _this.renderConsult9 = _this.renderConsult9.bind(_this);
+        return _this;
     }
 
     _createClass(Container, [{
-        key: 'render',
-        value: function render() {
+        key: 'handleConsult1',
+        value: function handleConsult1() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta1').then(function (res) {
+                _this2.setState({
+                    consulta1: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'handleConsult2',
+        value: function handleConsult2() {
+            var _this3 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta2').then(function (res) {
+                _this3.setState({
+                    consulta2: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'handleConsult3',
+        value: function handleConsult3() {
+            var _this4 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta3').then(function (res) {
+                _this4.setState({
+                    consulta3: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'handleConsult4',
+        value: function handleConsult4() {
+            var _this5 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta4').then(function (res) {
+                _this5.setState({
+                    consulta4: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'handleConsult5',
+        value: function handleConsult5() {
+            var _this6 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta5').then(function (res) {
+                _this6.setState({
+                    consulta5: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'handleConsult9',
+        value: function handleConsult9() {
+            var _this7 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/consulta9').then(function (res) {
+                _this7.setState({
+                    consulta9: res.data.consulta
+                });
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
+    }, {
+        key: 'renderConsult1',
+        value: function renderConsult1() {
+            var _this8 = this;
+
+            if (this.state.consulta1) {
+                var data = this.state.consulta1.map(function (doc, i) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 97
+                            },
+                            __self: _this8
+                        },
+                        'Marca: ',
+                        doc.Marca,
+                        ', Pais: ',
+                        doc.Pais,
+                        ' '
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 101
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'renderConsult2',
+        value: function renderConsult2() {
+            var _this9 = this;
+
+            if (this.state.consulta2) {
+                var data = this.state.consulta2.map(function (doc, i) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 112
+                            },
+                            __self: _this9
+                        },
+                        'Importe de las compras: ',
+                        doc["Importe de las Compras"]
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 116
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'renderConsult3',
+        value: function renderConsult3() {
+            var _this10 = this;
+
+            if (this.state.consulta3) {
+                var data = this.state.consulta3.map(function (doc, i) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 127
+                            },
+                            __self: _this10
+                        },
+                        'Venta en Madrid de Ducados: ',
+                        doc["Venta en Madrid de Ducados"],
+                        ' '
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 131
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'renderConsult4',
+        value: function renderConsult4() {
+            var _this11 = this;
+
+            if (this.state.consulta4) {
+                var data = this.state.consulta4.map(function (doc, i) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 142
+                            },
+                            __self: _this11
+                        },
+                        'Venta: ',
+                        doc["SUM(ven.cantidad)"],
+                        ', Marca : ',
+                        doc.Marca,
+                        ' '
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 146
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'renderConsult5',
+        value: function renderConsult5() {
+            var _this12 = this;
+
+            if (this.state.consulta5) {
+                var data = this.state.consulta5.map(function (doc, i) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 157
+                            },
+                            __self: _this12
+                        },
+                        'Ingresos ',
+                        doc.Ingresos,
+                        ' '
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 161
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'renderConsult9',
+        value: function renderConsult9() {
+            var _this13 = this;
+
+            if (this.state.consulta9) {
+                var data = this.state.consulta9.map(function (doc, i) {
+                    console.log(doc);
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'li',
+                        { key: i, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 173
+                            },
+                            __self: _this13
+                        },
+                        'NIF: ',
+                        doc.numFiscal,
+                        ', nombre: ',
+                        doc.nombre,
+                        ' '
+                    );
+                });
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 177
+                        },
+                        __self: this
+                    },
+                    data
+                );
+            }
+        }
+    }, {
+        key: 'handleQuerie',
+        value: function handleQuerie() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h1',
+                'div',
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 6
+                        lineNumber: 186
                     },
                     __self: this
                 },
-                'Hola'
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h1',
+                    { className: 'text-center', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 187
+                        },
+                        __self: this
+                    },
+                    'Consultas'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 188
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 189
+                            },
+                            __self: this
+                        },
+                        'Consulta 1'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 190
+                            },
+                            __self: this
+                        },
+                        'Obtener todas las marcas de cigarrillos extranjeros.'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult1, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 191
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 192
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 193
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult1()
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 196
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 197
+                            },
+                            __self: this
+                        },
+                        'Consulta 2'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 198
+                            },
+                            __self: this
+                        },
+                        'Obtener el valor de todas las compras realizadas por el estanco \'11111\' de la marca \'Camel\' desde el a\xF1o 1996 hasta la fecha.'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult2, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 202
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 203
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 204
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult2()
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 207
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 208
+                            },
+                            __self: this
+                        },
+                        'Consulta 3'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 209
+                            },
+                            __self: this
+                        },
+                        'Obtener el valor de todas las ventas de la marca \'Ducados\' que han realizado los estancos de la provincia de Madrid.'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult3, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 213
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 214
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 215
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult3()
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 218
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 219
+                            },
+                            __self: this
+                        },
+                        'Consulta 4'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 220
+                            },
+                            __self: this
+                        },
+                        'Obtener la marca de cigarrillos estadounidense que vende m\xE1s cigarrillos'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult4, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 223
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 224
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 225
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult4()
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 228
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 229
+                            },
+                            __self: this
+                        },
+                        'Consulta 5'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 230
+                            },
+                            __self: this
+                        },
+                        'Obtener los ingresos por ventas de la marca \u2018winston\u2019 el 22 de agosto de 1995'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult5, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 231
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 232
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 233
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult5()
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 236
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 237
+                            },
+                            __self: this
+                        },
+                        'Consulta 9'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 238
+                            },
+                            __self: this
+                        },
+                        'Obtener el nombre y el NIF de todos los estancos de Madrid que no venden cigarrillos Winston con mentol, pero s\xED Celtas sin filtro'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'button',
+                        { onClick: this.handleConsult9, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 242
+                            },
+                            __self: this
+                        },
+                        'Ejecutar'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 243
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 244
+                        },
+                        __self: this
+                    }),
+                    this.renderConsult9()
+                )
             );
+        }
+    }, {
+        key: 'handleHome',
+        value: function handleHome() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 253
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h1',
+                    { className: 'text-center', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 254
+                        },
+                        __self: this
+                    },
+                    'Bienvenido'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 255
+                        },
+                        __self: this
+                    },
+                    'En este documento se presentar\xE1 el plan de trabajo y dise\xF1o del primer proyecto de la clase de Teor\xEDa de Base de Datos II. El proyecto consiste en un sistema de manejo de inventario de cigarrillos en diferentes estancos, se maneja tanto la compra como la venta.'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 261
+                        },
+                        __self: this
+                    },
+                    'La interfaz principal se har\xE1 con java usando la base de datos Oracle despu\xE9s de hacer la base de datos en Oracle se migrar\xE1 a MySQL y la parte del cliente ser\xE1 web.'
+                )
+            );
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.topic === "home") {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 272
+                        },
+                        __self: this
+                    },
+                    this.handleHome()
+                );
+            } else {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'consult', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 276
+                        },
+                        __self: this
+                    },
+                    this.handleQuerie()
+                );
+            }
         }
     }]);
 
@@ -33669,25 +34418,22 @@ var Container = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Container);
 
 /***/ }),
-/* 278 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 279 */
 /***/ (function(module, exports) {
 
-module.exports = "/media/database.svg";
+// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */
+/* 280 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports) {
+
+module.exports = "/media/database.svg";
 
 /***/ })
 /******/ ]);

@@ -17,7 +17,7 @@ class Home extends Component {
             Manufacture : false,
             home : true,
             warehouse : false,
-            queries : false
+            queries : false,
         }
         this.handleComponent = this.handleComponent.bind(this)
         this.handleCigarette = this.handleCigarette.bind(this)
@@ -51,7 +51,10 @@ class Home extends Component {
             return (<Database entity="Manufacture" title="Manufactura"/>)
         }
         else if (this.state.home) {
-            return (<Container />)
+            return (<Container topic="home" />)
+        }
+        else if (this.state.queries){
+            return (<Container topic="consult" />)
         }
         else {
             return (<Database entity="warehouse" title="Almacen"/>)
@@ -199,7 +202,7 @@ class Home extends Component {
                     <div className="menu-nav pt-4" onClick={this.handleSales}>Ventas</div>
                     <div className="menu-nav pt-4" onClick={this.handleWatertight}>Estancos</div>
                     <div className="menu-nav pt-4" onClick={this.handleManufacture}>Manufactura</div>
-                    <div className="menu-nav pt-4">Consultas</div>
+                    <div className="menu-nav pt-4" onClick={this.handleQueries} >Consultas</div>
                     <div className="menu-nav pt-4">Salir</div>
                 </div>
                 <div className="col-md-10">
